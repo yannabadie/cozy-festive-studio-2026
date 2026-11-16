@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>YGN Festive & Focus Studio — Créations Digitales & Sur-Mesure (Noël 2026 & 2027)</title>
+  <meta name="description" content="Jeux d'enquête de Noël à imprimer, Planners iPad 2027 hyperliés, Systèmes Notion IA et Chansons personnalisées sur plaque QR 300 DPI (FR & EN)." />
+  <style>
+    :root {
+      --bg: #0b1210;
+      --surface: #131f1b;
+      --border: #263832;
+      --gold: #d4af6a;
+      --gold-light: #ead09c;
+      --text: #f5f2eb;
+      --muted: #a6b5af;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+    .topbar { background: #182923; border-bottom: 1px solid var(--border); padding: 10px 20px; text-align: center; font-size: .85rem; color: var(--gold-light); }
+    .container { max-width: 1180px; margin: 0 auto; padding: 36px 20px 64px; }
+    .nav { display: flex; justify-content: space-between; align-items: center; margin-bottom: 42px; flex-wrap: wrap; gap: 12px; }
+    .brand { font-family: Georgia, serif; font-size: 1.35rem; font-weight: 700; color: var(--gold); letter-spacing: .03em; }
+    .lang-switch button {
+      background: var(--surface); color: var(--text); border: 1px solid var(--border);
+      padding: 7px 14px; border-radius: 999px; cursor: pointer; font-weight: 600; font-size: .85rem; margin-left: 6px;
+    }
+    .lang-switch button.active { background: var(--gold); color: #0b1210; border-color: var(--gold); }
+    .hero { text-align: center; max-width: 820px; margin: 0 auto 52px; }
+    .hero h1 { font-family: Georgia, serif; font-size: clamp(2rem, 4vw, 3rem); line-height: 1.18; margin-bottom: 16px; }
+    .hero p { color: var(--muted); font-size: 1.08rem; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 26px; }
+    .card {
+      background: var(--surface); border: 1px solid var(--border); border-radius: 18px; overflow: hidden;
+      display: flex; flex-direction: column; transition: transform .2s ease, border-color .2s ease;
+    }
+    .card:hover { transform: translateY(-4px); border-color: var(--gold); }
+    .card img { width: 100%; aspect-ratio: 1/1; object-fit: cover; border-bottom: 1px solid var(--border); }
+    .card-body { padding: 24px; display: flex; flex-direction: column; flex-grow: 1; gap: 12px; }
+    .pill { align-self: flex-start; font-size: .75rem; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; color: var(--gold); background: rgba(212,175,106,.12); padding: 4px 10px; border-radius: 999px; }
+    .card h2 { font-family: Georgia, serif; font-size: 1.3rem; line-height: 1.3; }
+    .card p { color: var(--muted); font-size: .93rem; flex-grow: 1; }
+    .price-row { display: flex; justify-content: space-between; align-items: center; margin-top: 8px; padding-top: 14px; border-top: 1px solid var(--border); }
+    .price { font-size: 1.55rem; font-weight: 800; color: #fff; }
+    a.buy {
+      background: var(--gold); color: #0d1512; text-decoration: none; font-weight: 700;
+      padding: 11px 20px; border-radius: 999px; font-size: .92rem; transition: background .15s;
+    }
+    a.buy:hover { background: var(--gold-light); }
+    footer { margin-top: 64px; padding-top: 28px; border-top: 1px solid var(--border); text-align: center; color: var(--muted); font-size: .84rem; }
+    footer a { color: var(--gold); text-decoration: none; }
+    [data-lang="en"] { display: none; }
+    body.en [data-lang="fr"] { display: none; }
+    body.en [data-lang="en"] { display: block; }
+    body.en span[data-lang="en"], body.en a[data-lang="en"] { display: inline-block; }
+    span[data-lang="en"], a[data-lang="en"] { display: none; }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <span data-lang="fr">🎄 Édition Spéciale Black November & Noël 2026 • Téléchargement Immédiat (FR + EN inclus) • Paiement Sécurisé</span>
+    <span data-lang="en">🎄 Holiday 2026 & New Year 2027 Collection • Instant Digital Delivery (FR + EN Included) • Secure Checkout</span>
+  </div>
+
+  <div class="container">
+    <div class="nav">
+      <div class="brand">✦ YGN FESTIVE &amp; FOCUS STUDIO</div>
+      <div class="lang-switch">
+        <button id="btn-fr" class="active" onclick="setLang('fr')">🇫🇷 Français</button>
+        <button id="btn-en" onclick="setLang('en')">🇬🇧 English</button>
+      </div>
+    </div>
+
+    <section class="hero">
+      <h1 data-lang="fr">Des cadeaux mémorables pour Noël, des systèmes redoutables pour 2027.</h1>
+      <h1 data-lang="en">Unforgettable Holiday Keepsakes &amp; High-Performance 2027 Systems.</h1>
+      <p data-lang="fr">Zéro attente postale : recevez vos kits prêts à imprimer, vos planners interactifs iPad et vos créations musicales personnalisées directement après validation.</p>
+      <p data-lang="en">Zero shipping delays: access your print-ready dinner party mysteries, hyperlinked iPad planners, and custom studio songs with 300 DPI QR plaques.</p>
+    </section>
+
+    <div class="grid">
+      <!-- PRODUCT 1 -->
+      <article class="card">
+        <img src="img/mystery.jpg" alt="Kit Soirée Enquête Noël 2026" />
+        <div class="card-body">
+          <span class="pill" data-lang="fr">Téléchargement PDF Immédiat • FR + EN</span>
+          <span class="pill" data-lang="en">Instant PDF Download • EN + FR</span>
+          <h2 data-lang="fr">Le Mystère du Réveillon Doré — Jeu d'Enquête &amp; Kit de Table</h2>
+          <h2 data-lang="en">The Midnight Mistletoe Mystery — Printable Whodunit Party Kit</h2>
+          <p data-lang="fr">Huis clos glamour clé en main pour 6 à 8 convives (sans spoiler pour l'hôte) : guide minuté, 6 dossiers suspects, 4 indices illustrés, menu &amp; marque-places et solution scellée.</p>
+          <p data-lang="en">Turnkey candlelit manor mystery for 6–8 guests (spoiler-free so the host can play!): master timeline, 6 suspect dossiers, 4 forensic clues, printable menu &amp; place cards.</p>
+          <div class="price-row">
+            <span class="price">19 €</span>
+            <a class="buy checkout-mystery" data-lang="fr" href="https://yannabadi.gumroad.com/l/couwu">Commander →</a>
+            <a class="buy checkout-mystery" data-lang="en" href="https://yannabadi.gumroad.com/l/couwu">Get Instant Access →</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- PRODUCT 2 -->
+      <article class="card">
+        <img src="img/planner2027.png" alt="Pack Focus & Reset 2027" />
+        <div class="card-body">
+          <span class="pill" data-lang="fr">Bundle 2027 • iPad PDF + Notion IA</span>
+          <span class="pill" data-lang="en">2027 Bundle • Hyperlinked PDF + Notion AI</span>
+          <h2 data-lang="fr">Pack Focus &amp; Reset 2027 — Planner Hyperlié + 8 Agents IA</h2>
+          <h2 data-lang="en">2027 Focus Digital Planner + Solo Operator Notion AI OS</h2>
+          <p data-lang="fr">Planner paysage interactif (269 onglets cliquables GoodNotes / Notability, calendrier exact 2027, Winter Arc 90j, budget) + Architecture Notion 2.0 &amp; 8 workflows d'Agents IA.</p>
+          <p data-lang="en">Landscape interactive iPad planner (269 clickable links, exact 2027 calendar, 90-day Winter Arc, cashflow tracker) + Relational Notion 2.0 formulas &amp; 8 AI Agent workflows.</p>
+          <div class="price-row">
+            <span class="price">29 €</span>
+            <a class="buy checkout-planner" data-lang="fr" href="https://yannabadi.gumroad.com/l/tfoxbx">Commander →</a>
+            <a class="buy checkout-planner" data-lang="en" href="https://yannabadi.gumroad.com/l/tfoxbx">Get 2027 Bundle →</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- PRODUCT 3 -->
+      <article class="card">
+        <img src="img/vip_song.png" alt="Chanson de Noël Sur-Mesure + Plaque QR" />
+        <div class="card-body">
+          <span class="pill" data-lang="fr">Création Sur-Mesure 24h • VIP</span>
+          <span class="pill" data-lang="en">Bespoke 24h Creation • VIP Gift</span>
+          <h2 data-lang="fr">Chanson Personnalisée + Visuel Plaque Musicale QR 300 DPI</h2>
+          <h2 data-lang="en">Custom Studio Holiday Song + Scannable 300 DPI QR Plaque</h2>
+          <p data-lang="fr">Vos souvenirs, blagues privées et prénoms transformés en vraie chanson émouvante (FR ou EN) livrée sous 24h en MP3 Master + visuel haute définition avec QR Code actif.</p>
+          <p data-lang="en">Your real family memories, inside jokes, and names turned into a studio-quality song (EN or FR) delivered within 24h + print-ready 300 DPI QR music plaque artwork.</p>
+          <div class="price-row">
+            <span class="price">34 €</span>
+            <a class="buy checkout-vipsong" data-lang="fr" href="https://yannabadi.gumroad.com/l/afbhth">Personnaliser →</a>
+            <a class="buy checkout-vipsong" data-lang="en" href="https://yannabadi.gumroad.com/l/afbhth">Order Custom Song →</a>
+          </div>
+        </div>
+      </article>
+    </div>
+
+    <footer>
+      <p><strong>YGN</strong> — Yann Abadie • 8 Rue Du Gypaète, 64000 Pau, France • Contact : <a href="mailto:yann.abadie@gmail.com">yann.abadie@gmail.com</a></p>
+      <p style="margin-top:6px;">
+        <a href="https://yannabadie.github.io/ygn-guide-ia-locale/mentions-legales.html" target="_blank" rel="noopener">Mentions légales</a> •
+        Créations originales éditées par YGN Studio avec l'assistance d'outils d'IA générative.
+      </p>
+    </footer>
+  </div>
+
+  <script>
+    function setLang(l) {
+      document.body.classList.toggle('en', l === 'en');
+      document.getElementById('btn-fr').classList.toggle('active', l === 'fr');
+      document.getElementById('btn-en').classList.toggle('active', l === 'en');
+    }
+  </script>
+</body>
+</html>
