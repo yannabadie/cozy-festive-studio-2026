@@ -4,26 +4,464 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="robots" content="noindex, nofollow" />
-  <title>Livraison Immédiate — Chanson de Noël Sur-Mesure + Plaque QR 300 DPI</title>
+  <title>Confirmation VIP &amp; Brief Chanson 24h — YGN Studio</title>
   <style>
-    body { font-family: system-ui, -apple-system, sans-serif; background:#0d1412; color:#f4f1ea; display:flex; align-items:center; justify-content:center; min-height:100vh; margin:0; padding:24px; }
-    .box { max-width:640px; background:#15221e; border:1px solid #d4af6a; border-radius:18px; padding:36px; text-align:center; box-shadow:0 20px 50px rgba(0,0,0,.45); }
-    .ok { color:#d4af6a; font-weight:700; letter-spacing:.08em; text-transform:uppercase; font-size:.85rem; }
-    h1 { font-family: Georgia, serif; font-size:1.75rem; margin:12px 0 8px; }
-    h2 { font-size:1.05rem; font-weight:400; color:#b8c4be; margin:0 0 28px; }
-    a.cta { display:inline-block; background:#d4af6a; color:#101815; font-weight:700; text-decoration:none; padding:15px 26px; border-radius:999px; font-size:1rem; }
-    a.cta:hover { background:#e5c483; }
-    footer { margin-top:28px; font-size:.8rem; color:#7f8f88; }
+    :root {
+      --bg: #09110e;
+      --surface: #12211b;
+      --surface-2: #182c24;
+      --border: rgba(212, 175, 106, 0.34);
+      --gold: #d4af6a;
+      --gold-light: #e8cb92;
+      --text: #f6f3eb;
+      --muted: #b3c2bb;
+      --ok: #7bd4a8;
+      --err: #f39595;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+      background: radial-gradient(ellipse 80% 45% at 50% 0%, rgba(36, 78, 62, 0.42), transparent 70%), var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      padding: 28px 18px 60px;
+      min-height: 100vh;
+    }
+    body:not(.en) [data-lang="en"] { display: none !important; }
+    body.en [data-lang="fr"] { display: none !important; }
+    .wrap {
+      max-width: 820px;
+      margin: 0 auto;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 34px 30px;
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.5);
+    }
+    .top-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-bottom: 20px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid rgba(212, 175, 106, 0.18);
+    }
+    .badge-ok {
+      color: var(--gold);
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-size: 0.82rem;
+    }
+    .lang-btns button {
+      background: var(--surface-2);
+      color: var(--text);
+      border: 1px solid var(--border);
+      padding: 6px 12px;
+      border-radius: 999px;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 0.8rem;
+      margin-left: 4px;
+    }
+    .lang-btns button.active {
+      background: var(--gold);
+      color: #09110e;
+      border-color: var(--gold);
+    }
+    h1 {
+      font-family: Georgia, serif;
+      font-size: clamp(1.65rem, 3.2vw, 2.2rem);
+      line-height: 1.2;
+      margin-bottom: 10px;
+    }
+    .subtitle {
+      color: var(--muted);
+      font-size: 0.98rem;
+      margin-bottom: 24px;
+    }
+    .draft-notice {
+      display: none;
+      background: rgba(123, 212, 168, 0.11);
+      border: 1px solid rgba(123, 212, 168, 0.45);
+      color: var(--ok);
+      padding: 10px 14px;
+      border-radius: 10px;
+      font-size: 0.86rem;
+      margin-bottom: 20px;
+      font-weight: 600;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+    .field { display: flex; flex-direction: column; gap: 6px; }
+    .field.full { grid-column: 1 / -1; }
+    label { font-size: 0.84rem; font-weight: 600; color: var(--gold-light); }
+    input, select, textarea {
+      background: #070e0c;
+      border: 1px solid rgba(212, 175, 106, 0.25);
+      border-radius: 10px;
+      padding: 11px 13px;
+      color: var(--text);
+      font-family: inherit;
+      font-size: 0.93rem;
+    }
+    input:focus, select:focus, textarea:focus {
+      outline: none;
+      border-color: var(--gold);
+    }
+    .error-msg {
+      color: var(--err);
+      font-size: 0.86rem;
+      font-weight: 600;
+      margin-top: 12px;
+      min-height: 1.2em;
+    }
+    .submit-btn {
+      margin-top: 14px;
+      width: 100%;
+      background: var(--gold);
+      color: #09110e;
+      font-weight: 700;
+      font-size: 1rem;
+      padding: 15px 24px;
+      border: none;
+      border-radius: 999px;
+      cursor: pointer;
+      transition: background 0.18s ease;
+    }
+    .submit-btn:hover { background: var(--gold-light); }
+    .result-panel {
+      display: none;
+      margin-top: 26px;
+      padding: 22px;
+      background: #070e0c;
+      border: 1px solid var(--gold);
+      border-radius: 14px;
+    }
+    .result-panel.visible { display: block; }
+    .action-row {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin: 14px 0;
+    }
+    .btn-act {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      padding: 11px 18px;
+      border-radius: 999px;
+      font-weight: 700;
+      font-size: 0.88rem;
+      cursor: pointer;
+      text-decoration: none;
+      border: 1px solid var(--gold);
+    }
+    .btn-act.primary { background: var(--gold); color: #09110e; flex: 1 1 auto; }
+    .btn-act.secondary { background: var(--surface-2); color: var(--text); }
+    pre {
+      background: #040807;
+      border: 1px solid rgba(212, 175, 106, 0.2);
+      border-radius: 10px;
+      padding: 14px;
+      color: #cfe3da;
+      font-size: 0.8rem;
+      overflow-x: auto;
+      white-space: pre-wrap;
+      word-break: break-word;
+    }
+    footer {
+      margin-top: 28px;
+      padding-top: 18px;
+      border-top: 1px solid rgba(212, 175, 106, 0.16);
+      font-size: 0.8rem;
+      color: #879991;
+      text-align: center;
+    }
+    footer a { color: var(--gold-light); text-decoration: none; }
+    @media (max-width: 680px) {
+      .grid { grid-template-columns: 1fr; }
+      .wrap { padding: 24px 18px; }
+    }
   </style>
 </head>
 <body>
-  <div class="box">
-    <div class="ok">✓ Paiement Confirmé • Instant Delivery</div>
-    <h1>Chanson de Noël Sur-Mesure + Plaque QR 300 DPI</h1>
-    <h2>Custom 24h Holiday Song & 300 DPI QR Plaque</h2>
-    <a class="cta" href="mailto:yann.abadie@gmail.com?subject=Commande%20Chanson%20Sur-Mesure%20Noel%202026&body=1)%20Prenom%20et%20lien%20du%20destinataire%20:%0A2)%203%20souvenirs%20ou%20anecdotes%20:%0A3)%20Style%20musical%20souhaite%20:%0A4)%20Langue%20(FR%20ou%20EN)%20:">✉️ Envoyer mes 3 souvenirs & lancer ma Chanson 24h / Send Song Details</a>
-    <p style='margin-top:16px;color:#b8c4be;'>Joignez simplement une photo si vous souhaitez qu'elle figure sur votre visuel de Plaque Musicale QR Code 300 DPI. Livraison sous 24h par e-mail !</p>
-    <footer>Support client : yann.abadie@gmail.com • YGN Studio (Pau, France)</footer>
-  </div>
+  <main class="wrap">
+    <div class="top-row">
+      <div class="badge-ok">✓ Paiement Confirmé • Production Studio VIP 24h</div>
+      <div class="lang-btns">
+        <button id="btn-fr" type="button" class="active" onclick="setVipPageLang('fr')">🇫🇷 Français</button>
+        <button id="btn-en" type="button" onclick="setVipPageLang('en')">🇬🇧 English</button>
+      </div>
+    </div>
+
+    <h1>
+      <span data-lang="fr">Finalisez votre Chanson Sur-Mesure &amp; Plaque QR 300 DPI</span>
+      <span data-lang="en">Complete Your Custom 24h Song &amp; 300 DPI QR Plaque Brief</span>
+    </h1>
+    <p class="subtitle">
+      <span data-lang="fr">Merci pour votre commande ! Validez ci-dessous vos 3 souvenirs, le style musical et la langue chantée : notre formulaire génère votre fiche de production structurée (<code>commande_vip.json</code>) pour un lancement immédiat sous 24h.</span>
+      <span data-lang="en">Thank you for your order! Confirm your recipient, 3 memories, musical style, and vocal language below to generate your structured production payload (<code>commande_vip.json</code>) for immediate 24h studio fulfillment.</span>
+    </p>
+
+    <div id="draft-restored-banner" class="draft-notice">
+      <span data-lang="fr">✓ Votre brouillon préparé avant paiement a été restauré automatiquement ! Vérifiez-le et validez ci-dessous.</span>
+      <span data-lang="en">✓ Your pre-checkout song brief was automatically restored! Review and click Generate below.</span>
+    </div>
+
+    <form id="vip-fulfill-form" onsubmit="handleVipSubmit(event)" novalidate>
+      <div class="grid">
+        <div class="field">
+          <label for="f-recipient"><span data-lang="fr">Destinataire (Prénom / Surnom) *</span><span data-lang="en">Recipient Name / Nickname *</span></label>
+          <input id="f-recipient" type="text" required placeholder="Ex : Papa (Marc), Julie & Alex..." />
+        </div>
+
+        <div class="field">
+          <label for="f-occasion"><span data-lang="fr">Occasion Célébrée *</span><span data-lang="en">Occasion *</span></label>
+          <select id="f-occasion" required>
+            <option value="noel">🎄 Noël / Réveillon 2026</option>
+            <option value="anniversaire">🎂 Anniversaire 30 / 40 / 50 / 60 ans</option>
+            <option value="evjf_mariage">💍 EVJF / Mariage / Noces</option>
+            <option value="saint_valentin">❤️ Saint-Valentin / Couple</option>
+            <option value="hommage_animal">🐾 Hommage Animal / Compagnon</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="f-relationship"><span data-lang="fr">Lien &amp; De la part de (Dédicace) *</span><span data-lang="en">Relationship &amp; Sender Dedication *</span></label>
+          <input id="f-relationship" type="text" required placeholder="Ex : 25 ans de souvenirs en famille (De Léa & Hugo)" />
+        </div>
+
+        <div class="field">
+          <label for="f-style"><span data-lang="fr">Style Musical *</span><span data-lang="en">Musical Style *</span></label>
+          <select id="f-style" required>
+            <option value="Acoustique Folk-Pop & Guitare">🎸 Acoustique Folk-Pop &amp; Guitare</option>
+            <option value="Ballade Piano-Voix Émotion">🎹 Ballade Piano-Voix Émotion</option>
+            <option value="Pop Joyeuse & Festive">✨ Pop Joyeuse &amp; Festive</option>
+            <option value="Chanson Française Poétique">🎙️ Chanson Française Poétique</option>
+            <option value="Warm Indie Soul / Country">🤠 Warm Indie Folk / Country</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="f-lang"><span data-lang="fr">Langue Chantée *</span><span data-lang="en">Vocal Language *</span></label>
+          <select id="f-lang" required>
+            <option value="FR">🇫🇷 Français (FR)</option>
+            <option value="EN">🇬🇧 English (EN)</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="f-title"><span data-lang="fr">Titre souhaité (ou laissé à notre plume)</span><span data-lang="en">Desired Song Title (Optional)</span></label>
+          <input id="f-title" type="text" placeholder="Ex : Les Dimanches Rue des Lilas" />
+        </div>
+
+        <div class="field full">
+          <label for="f-mem1"><span data-lang="fr">Souvenir #1 (Anecdote précise, lieu, habitude) *</span><span data-lang="en">Memory #1 (Specific moment, place, or habit) *</span></label>
+          <input id="f-mem1" type="text" required placeholder="1er souvenir marquant à intégrer dans le couplet 1..." />
+        </div>
+
+        <div class="field full">
+          <label for="f-mem2"><span data-lang="fr">Souvenir #2 (Blague privée, voyage ou phrase culte) *</span><span data-lang="en">Memory #2 (Inside joke, trip, or signature phrase) *</span></label>
+          <input id="f-mem2" type="text" required placeholder="2e souvenir marquant à intégrer dans le couplet 2..." />
+        </div>
+
+        <div class="field full">
+          <label for="f-mem3"><span data-lang="fr">Souvenir #3 (Émotion, message fort ou vœu) *</span><span data-lang="en">Memory #3 (Heartfelt message or wish for the chorus/bridge) *</span></label>
+          <input id="f-mem3" type="text" required placeholder="3e détail ou message d'émotion..." />
+        </div>
+
+        <div class="field full">
+          <label for="f-email"><span data-lang="fr">Votre E-mail de Réception (pour recevoir le MP3 + Plaque QR sous 24h) *</span><span data-lang="en">Your Delivery Email (to receive MP3 + 300 DPI QR Plaque within 24h) *</span></label>
+          <input id="f-email" type="email" required placeholder="votre.email@exemple.fr" />
+        </div>
+      </div>
+
+      <div id="vip-form-error" class="error-msg" role="alert"></div>
+
+      <button id="btn-generate-vip-order" type="submit" class="submit-btn">
+        <span data-lang="fr">✨ Valider mon Brief &amp; Générer ma Commande Structurée 24h →</span>
+        <span data-lang="en">✨ Validate Brief &amp; Generate Structured 24h Order →</span>
+      </button>
+    </form>
+
+    <section id="vip-result-panel" class="result-panel" aria-live="polite">
+      <div class="badge-ok" style="color:var(--ok);margin-bottom:6px;">
+        <span data-lang="fr">✓ Brief Validé — Prêt à transmettre en 1 clic</span>
+        <span data-lang="en">✓ Brief Validated — Ready for 1-Click Dispatch</span>
+      </div>
+      <p style="font-size:0.9rem;color:var(--muted);">
+        <span data-lang="fr">Cliquez sur le bouton principal ci-dessous pour expédier votre commande pré-formatée (joignez simplement votre photo à l'e-mail si vous souhaitez qu'elle figure sur la Plaque QR 300 DPI) :</span>
+        <span data-lang="en">Click the primary dispatch button below to send your pre-formatted JSON brief (attach a photo to the email if you want it framed on your 300 DPI QR Plaque):</span>
+      </p>
+
+      <div class="action-row">
+        <a id="btn-dispatch-mailto" class="btn-act primary" href="mailto:yann.abadie@gmail.com">
+          <span data-lang="fr">✉️ Envoyer ma Commande Structurée en 1 Clic (E-mail Pré-rempli)</span>
+          <span data-lang="en">✉️ 1-Click Dispatch Pre-Formatted Order Email</span>
+        </a>
+        <button id="btn-copy-order-json" type="button" class="btn-act secondary" onclick="copyOrderJson()">
+          <span data-lang="fr">📋 Copier order.json</span>
+          <span data-lang="en">📋 Copy order.json</span>
+        </button>
+        <button id="btn-download-order-json" type="button" class="btn-act secondary" onclick="downloadOrderJson()">
+          <span data-lang="fr">⬇️ Télécharger commande_vip.json</span>
+          <span data-lang="en">⬇️ Download commande_vip.json</span>
+        </button>
+      </div>
+      <div id="copy-feedback" style="font-size:0.82rem;color:var(--ok);margin-bottom:8px;min-height:1.1em;"></div>
+      <pre id="order-json-code">{}</pre>
+    </section>
+
+    <footer>
+      <p><strong>YGN — Yann Abadie</strong> • 8 Rue Du Gypaète, 64000 Pau, France • Support prioritaire : <a href="mailto:yann.abadie@gmail.com">yann.abadie@gmail.com</a></p>
+      <p style="margin-top:4px;">TVA non applicable, art. 293 B du CGI • <a href="https://yannabadie.github.io/cozy-festive-studio-2026/">Retour à la boutique YGN Studio</a> • <a href="https://yannabadie.github.io/ygn-guide-ia-locale/mentions-legales.html" target="_blank" rel="noopener">Mentions légales</a></p>
+    </footer>
+  </main>
+
+  <script>
+    var STORAGE_VIP_KEY = 'ygn_vip_song_brief_v1';
+    var STORAGE_LANG_KEY = 'ygn_studio_lang';
+    var currentOrderJsonString = '';
+
+    function setVipPageLang(l) {
+      var isEn = (l === 'en');
+      document.body.classList.toggle('en', isEn);
+      document.documentElement.lang = isEn ? 'en' : 'fr';
+      document.getElementById('btn-fr').classList.toggle('active', !isEn);
+      document.getElementById('btn-en').classList.toggle('active', isEn);
+      try { localStorage.setItem(STORAGE_LANG_KEY, isEn ? 'en' : 'fr'); } catch (e) {}
+    }
+
+    function makeOrderId() {
+      var d = new Date().toISOString().slice(0, 10).replace(/-/g, '');
+      var rnd = Math.floor(1000 + Math.random() * 9000);
+      return 'VIP-' + d + '-' + rnd;
+    }
+
+    function handleVipSubmit(ev) {
+      ev.preventDefault();
+      var isEn = document.body.classList.contains('en');
+      var errEl = document.getElementById('vip-form-error');
+      errEl.textContent = '';
+
+      var recipient = document.getElementById('f-recipient').value.trim();
+      var occasion = document.getElementById('f-occasion').value;
+      var relationship = document.getElementById('f-relationship').value.trim();
+      var style = document.getElementById('f-style').value;
+      var lang = document.getElementById('f-lang').value;
+      var titleRaw = document.getElementById('f-title').value.trim();
+      var mem1 = document.getElementById('f-mem1').value.trim();
+      var mem2 = document.getElementById('f-mem2').value.trim();
+      var mem3 = document.getElementById('f-mem3').value.trim();
+      var email = document.getElementById('f-email').value.trim();
+
+      if (!recipient || !occasion || !mem1 || !mem2 || !mem3 || !style || !lang || !email) {
+        errEl.textContent = isEn
+          ? 'Please fill in the recipient, all 3 memories, musical style, language, and your delivery email.'
+          : 'Merci de renseigner le destinataire, les 3 souvenirs, le style musical, la langue et votre e-mail de réception.';
+        return;
+      }
+
+      var ordId = makeOrderId();
+      var songTitle = titleRaw || (lang === 'EN' ? ('Song for ' + recipient) : ('Chanson pour ' + recipient));
+      var relFinal = relationship || occasion;
+      var orderObj = {
+        order_id: ordId,
+        created_at: new Date().toISOString(),
+        customer_email: email,
+        lang: lang,
+        occasion: occasion,
+        recipient: recipient,
+        sender: email.split('@')[0] || 'Famille',
+        relationship: relFinal,
+        memories: [mem1, mem2, mem3],
+        musical_style: style,
+        song_title: songTitle,
+        duration: '3:12',
+        player_url: 'https://yannabadie.github.io/cozy-festive-studio-2026/vip-player/' + ordId + '/',
+        audio_url: 'https://yannabadie.github.io/cozy-festive-studio-2026/vip-player/' + ordId + '/song.mp3'
+      };
+
+      currentOrderJsonString = JSON.stringify(orderObj, null, 2);
+      try { localStorage.setItem(STORAGE_VIP_KEY, currentOrderJsonString); } catch (e) {}
+
+      document.getElementById('order-json-code').textContent = currentOrderJsonString;
+      document.getElementById('vip-result-panel').classList.add('visible');
+
+      var subj = '[COMMANDE VIP 24H] ' + orderObj.order_id + ' — ' + recipient + ' (' + lang + ')';
+      var bodyLines = [
+        'Bonjour Yann (YGN Studio),',
+        '',
+        'Voici ma commande Chanson Sur-Mesure 24h + Plaque Musicale QR 300 DPI.',
+        '(Je joins ma photo à cet e-mail si je souhaite l’intégrer sur la plaque).',
+        'Exécution Studio 1-commande : .venv/bin/python products/04_custom_vip_engine/auto_fulfill_vip.py --order-json commande_vip.json --outdir deliveries/' + ordId,
+        '',
+        '--- BEGIN VIP ORDER JSON ---',
+        currentOrderJsonString,
+        '--- END VIP ORDER JSON ---'
+      ].join('\n');
+
+      var mailtoHref = 'mailto:yann.abadie@gmail.com?subject=' + encodeURIComponent(subj) + '&body=' + encodeURIComponent(bodyLines);
+      document.getElementById('btn-dispatch-mailto').href = mailtoHref;
+    }
+
+    function copyOrderJson() {
+      if (!currentOrderJsonString) return;
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(currentOrderJsonString);
+      }
+      var fb = document.getElementById('copy-feedback');
+      fb.textContent = document.body.classList.contains('en')
+        ? '✓ JSON payload copied to clipboard!'
+        : '✓ Bloc JSON copié dans le presse-papiers !';
+    }
+
+    function downloadOrderJson() {
+      if (!currentOrderJsonString) return;
+      var blob = new Blob([currentOrderJsonString], { type: 'application/json;charset=utf-8' });
+      var u = URL.createObjectURL(blob);
+      var a = document.createElement('a');
+      a.href = u;
+      a.download = 'commande_vip.json';
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(u);
+    }
+
+    document.addEventListener('DOMContentLoaded', function () {
+      try {
+        var savedLang = localStorage.getItem(STORAGE_LANG_KEY);
+        if (savedLang === 'en' || savedLang === 'fr') setVipPageLang(savedLang);
+        var raw = localStorage.getItem(STORAGE_VIP_KEY);
+        if (raw) {
+          var d = JSON.parse(raw);
+          var restored = false;
+          if (d.recipient && d.recipient !== 'Destinataire') { document.getElementById('f-recipient').value = d.recipient; restored = true; }
+          if (d.occasion) document.getElementById('f-occasion').value = d.occasion;
+          if (d.relationship) document.getElementById('f-relationship').value = d.relationship;
+          if (d.musical_style) document.getElementById('f-style').value = d.musical_style;
+          if (d.lang) document.getElementById('f-lang').value = d.lang;
+          if (d.song_title) document.getElementById('f-title').value = d.song_title;
+          if (d.customer_email) document.getElementById('f-email').value = d.customer_email;
+          if (Array.isArray(d.memories)) {
+            if (d.memories[0]) { document.getElementById('f-mem1').value = d.memories[0]; restored = true; }
+            if (d.memories[1]) document.getElementById('f-mem2').value = d.memories[1];
+            if (d.memories[2]) document.getElementById('f-mem3').value = d.memories[2];
+          }
+          if (restored) {
+            document.getElementById('draft-restored-banner').style.display = 'block';
+          }
+        }
+      } catch (e) {}
+    });
+  </script>
 </body>
 </html>

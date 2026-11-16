@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /livraison-
+Disallow: /vip_delivery_upgraded.html
+Sitemap: https://yannabadie.github.io/cozy-festive-studio-2026/sitemap.xml
