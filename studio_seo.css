@@ -667,6 +667,8 @@ a.buy:hover {
   gap: 12px;
 }
 
+a.mini-offer-row { text-decoration: none; color: inherit; }
+a.mini-offer-row:hover { filter: brightness(1.12); }
 .mini-offer-row {
   background: rgba(8, 15, 13, 0.55);
   border: 1px solid var(--border-subtle);

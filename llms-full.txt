@@ -1,0 +1,41 @@
+# YGN — Cozy Festive Studio & Conformité Factur-X 2026/2027
+
+> Micro-entreprise française (Yann Abadie, Pau — TVA non applicable, art. 293 B du CGI). Deux pôles : (1) outils de conformité facturation électronique Factur-X pour TPE/freelances (réforme : réception obligatoire sept. 2026, émission TPE sept. 2027) ; (2) kits imprimables et cadeaux personnalisés bilingues FR/EN. Contenus créés avec assistance IA et relus.
+
+## Pages publiques
+- [Vitrine YGN Cozy Festive Studio (FR/EN)](https://yannabadie.github.io/cozy-festive-studio-2026/index.html)
+- [Validateur Factur-X gratuit 2026/2027 (EN 16931 + BR-FR, 100 % navigateur)](https://yannabadie.github.io/cozy-festive-studio-2026/validateur-factur-x-gratuit-2026-2027.html)
+- [Offres conformité Factur-X TPE 19 € / 49 € / 119 €](https://yannabadie.github.io/cozy-festive-studio-2026/conformite-facturx-2027-tpe-pass-annuel.html)
+- [Jeu d'enquête Noël PDF FR/EN — 19 €](https://yannabadie.github.io/cozy-festive-studio-2026/jeu-enquete-noel-murder-mystery-pdf.html)
+- [Planner iPad 2027 + Notion IA (TDAH) — 29 €](https://yannabadie.github.io/cozy-festive-studio-2026/planner-digital-ipad-2027-notion-ia-tdah.html)
+- [Chanson personnalisée 24 h + plaque QR — 34 €](https://yannabadie.github.io/cozy-festive-studio-2026/chanson-personnalisee-plaque-qr-code-cadeau.html)
+- [Compagnon interactif de soirée enquête (démo gratuite)](https://yannabadie.github.io/cozy-festive-studio-2026/compagnon-enquete-reveillon-dore.html)
+- [Cockpit Focus TDAH 2027 (démo gratuite)](https://yannabadie.github.io/cozy-festive-studio-2026/compagnon-focus-tdah-2027.html)
+
+## Paiement (Stripe, paiement unique)
+- Pack Pilotage Micro & TPE 2027 — 19 € : https://buy.stripe.com/3cIaEWfnS8ifbTBdXH2cg05
+- Studio Factur-X Local 2027 — 49 € : https://buy.stripe.com/4gMcN40sY41Zf5N1aV2cg06
+- Suite Pro TPE + n8n & AI Act — 119 € : https://buy.stripe.com/aFa8wO0sY1TRbTB1aV2cg07
+- Guide IA locale sur Mac — 29 € : https://buy.stripe.com/14A14m5NigOLcXF7zj2cg03
+- Kit soirée enquête Noël — 19 € : https://buy.stripe.com/28E7sKfnS0PN1eX6vf2cg09
+- Planner 2027 + Notion IA — 29 € : https://buy.stripe.com/00w5kCejOcyv3n54n72cg0a
+- Chanson personnalisée + plaque QR — 34 € : https://buy.stripe.com/3cIbJ05Niburg9RdXH2cg0b
+
+## Écosystème
+- FacturKit 2027 : https://yannabadie.github.io/facturkit-2027/
+- Mentions légales : https://yannabadie.github.io/ygn-guide-ia-locale/mentions-legales.html
+## Détails — Validateur Factur-X gratuit
+- Analyse locale (aucun envoi serveur) d'un PDF/A-3 Factur-X ou d'un XML CII.
+- Contrôles : profil (MINIMUM/BASIC WL/BASIC refusés pour le flux 2 PA ; EN 16931 et EXTENDED acceptés),
+  totaux au centime (BR-CO-10..17), règles françaises BR-FR (SIREN Luhn, BT-23 B1/S1/M1, notes PMD/PMT/AAB),
+  franchise art. 293 B (VATEX-FR-FRANCHISE), IBAN modulo 97.
+- Correction automatique et génération d'un XML EN 16931 auto-validé (score 100).
+
+## Détails — Studio créatif FR/EN
+- Kits PDF imprimables (soirée enquête, chasse au trésor enfants 6–10 ans, EVJF, anniversaires).
+- Planners numériques hyperliés iPad/GoodNotes et prompts Notion IA.
+- Chanson personnalisée livrée en 24 h avec lecteur karaoké et plaque QR 300 DPI.
+
+## Calendrier légal (France)
+- 1er septembre 2026 : réception obligatoire des factures électroniques pour toutes les entreprises.
+- 1er septembre 2027 : émission obligatoire pour les PME, TPE et micro-entreprises.

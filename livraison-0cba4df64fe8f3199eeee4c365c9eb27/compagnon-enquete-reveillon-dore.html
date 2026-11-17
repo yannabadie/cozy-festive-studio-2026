@@ -1,0 +1,1603 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Compagnon Maître du Jeu — Le Mystère du Réveillon Doré (Manoir de Val-d'Or) | YGN Studio</title>
+  <meta name="description" content="Application web interactive bilingue (FR/EN) sans spoiler pour animer Le Mystère du Réveillon Doré : quiz de casting 6 joueurs, chronomètre Actes I à III, soundboard audio procédural (tempête, panne 23h40, mémo vocal 23h42 d'Inès, gong) et dépouillement des votes." />
+  <link rel="canonical" href="https://yannabadie.github.io/cozy-festive-studio-2026/compagnon-enquete-reveillon-dore.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Compagnon Hôte Sans Spoiler — Le Mystère du Réveillon Doré (FR + EN)" />
+  <meta property="og:description" content="Casting 6 suspects, timers par acte, ambiance sonore Web Audio du Manoir de Val-d'Or (mémo 23h42 d'Inès inclus) et révélation scellée." />
+  <meta property="og:url" content="https://yannabadie.github.io/cozy-festive-studio-2026/compagnon-enquete-reveillon-dore.html" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "Le Mystère du Réveillon Doré — Kit Soirée Enquête PDF + Compagnon Audio Interactif (FR + EN)",
+    "description": "Jeu d'enquête à huis clos clé en main pour 6 à 8 convives au Manoir de Val-d'Or (sans spoiler pour l'hôte) accompagné de sa console web interactive : quiz d'attribution des 6 rôles, chronomètres d'actes, soundboard Web Audio 4 pistes et coffre scellé.",
+    "brand": {
+      "@type": "Brand",
+      "name": "YGN Studio"
+    },
+    "sku": "YGN-MYSTERY-2026-COMPANION",
+    "offers": {
+      "@type": "Offer",
+      "url": "https://buy.stripe.com/28E7sKfnS0PN1eX6vf2cg09",
+      "priceCurrency": "EUR",
+      "price": "19.00",
+      "availability": "https://schema.org/InStock"
+    }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Console Maître du Jeu — Manoir de Val-d'Or / Valmont Manor",
+    "applicationCategory": "GameApplication",
+    "operatingSystem": "Web Browser (iOS, Android, macOS, Windows — 100% Offline Ready)",
+    "offers": {
+      "@type": "Offer",
+      "price": "19.00",
+      "priceCurrency": "EUR",
+      "availability": "https://schema.org/InStock"
+    }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "L'hôte peut-il utiliser ce compagnon interactif tout en jouant un suspect sans connaître le coupable ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Oui. L'intégralité de l'interface (quiz de casting, chronomètres, soundboard audio, suivi des 4 pièces à conviction et dépouillement des bulletins) est garantie zéro spoiler. L'identité du coupable est chiffrée et protégée par un double verrou de confirmation à l'Acte III."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "La console sonore fonctionne-t-elle hors-ligne depuis l'archive ZIP téléchargée ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Oui. Les 4 effets acoustiques (tempête alpine et cheminée, disjoncteur de 23h40, mémo vocal 23h42 d'Inès et gong d'accusation) sont synthétisés en temps réel via l'API Web Audio native du navigateur, sans fichier externe ni connexion internet requise."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Combien de joueurs peuvent participer à la soirée enquête ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Le scénario réunit 6 suspects principaux autour de la table du réveillon, et permet d'accueillir jusqu'à 8 participants grâce aux rôles d'inspecteurs invités lors du contre-interrogatoire et du vote final."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Le compagnon et les livrets PDF sont-ils disponibles en français et en anglais ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Oui. Un sélecteur instantané FR / EN adapte toute l'application web aux deux versions incluses dans le pack : Le Mystère du Réveillon Doré (A4) et The Midnight Mistletoe Mystery (US Letter)."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    :root {
+      --bg-deep: #070e0c;
+      --bg-base: #0b1411;
+      --surface-1: #111f1a;
+      --surface-2: #162822;
+      --surface-3: #1d332b;
+      --border-subtle: rgba(212, 175, 106, 0.2);
+      --border-strong: rgba(212, 175, 106, 0.52);
+      --gold: #d4af6a;
+      --gold-bright: #ebd19d;
+      --gold-tint: rgba(212, 175, 106, 0.12);
+      --crimson: #8b2632;
+      --crimson-soft: rgba(139, 38, 50, 0.24);
+      --crimson-text: #f5b4bc;
+      --text-main: #f6f3eb;
+      --text-soft: #c2d0ca;
+      --text-muted: #889c94;
+      --success: #7bd4a8;
+      --shadow-card: 0 20px 48px rgba(0, 0, 0, 0.44);
+      --radius-lg: 18px;
+      --radius-md: 12px;
+      --radius-pill: 999px;
+      --font-serif: Georgia, 'Palatino Linotype', 'Book Antiqua', Palatino, serif;
+      --font-sans: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      -webkit-text-size-adjust: 100%;
+    }
+
+    body {
+      font-family: var(--font-sans);
+      background-color: var(--bg-base);
+      background-image:
+        radial-gradient(ellipse 80% 40% at 50% -5%, rgba(34, 72, 57, 0.48), transparent 70%),
+        radial-gradient(ellipse 55% 35% at 88% 18%, rgba(212, 175, 106, 0.08), transparent 65%);
+      color: var(--text-main);
+      line-height: 1.62;
+      min-height: 100vh;
+    }
+
+    body:not(.en) [data-lang="en"] { display: none !important; }
+    body.en [data-lang="fr"] { display: none !important; }
+
+    a {
+      color: var(--gold-bright);
+      text-decoration: none;
+      transition: color 0.18s ease, background-color 0.18s ease, border-color 0.18s ease, transform 0.18s ease;
+    }
+
+    a:hover {
+      color: #ffffff;
+    }
+
+    .topbar {
+      background: linear-gradient(90deg, #0e1b16 0%, #172b23 50%, #0e1b16 100%);
+      border-bottom: 1px solid var(--border-subtle);
+      padding: 9px 18px;
+      text-align: center;
+      font-size: 0.82rem;
+      letter-spacing: 0.03em;
+      color: var(--gold-bright);
+    }
+
+    .container {
+      max-width: 1160px;
+      margin: 0 auto;
+      padding: 26px 20px 72px;
+    }
+
+    .site-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      padding-bottom: 20px;
+      margin-bottom: 28px;
+      border-bottom: 1px solid var(--border-subtle);
+      flex-wrap: wrap;
+    }
+
+    .brand-link {
+      font-family: var(--font-serif);
+      font-size: 1.28rem;
+      font-weight: 700;
+      color: var(--gold);
+      letter-spacing: 0.04em;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .nav-pill {
+      font-size: 0.83rem;
+      font-weight: 600;
+      color: var(--text-soft);
+      padding: 7px 13px;
+      border-radius: var(--radius-pill);
+      border: 1px solid var(--border-subtle);
+      background: rgba(17, 31, 26, 0.72);
+    }
+
+    .nav-pill:hover {
+      border-color: var(--gold);
+      color: var(--gold-bright);
+    }
+
+    .lang-switch {
+      display: inline-flex;
+      background: var(--surface-1);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-pill);
+      padding: 3px;
+      gap: 3px;
+    }
+
+    .lang-switch button {
+      background: transparent;
+      color: var(--text-soft);
+      border: none;
+      padding: 6px 12px;
+      border-radius: var(--radius-pill);
+      cursor: pointer;
+      font-weight: 700;
+      font-size: 0.8rem;
+      transition: background-color 0.16s ease, color 0.16s ease;
+    }
+
+    .lang-switch button.active {
+      background: var(--gold);
+      color: var(--bg-deep);
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1.35fr 0.85fr;
+      gap: 26px;
+      align-items: center;
+      background: linear-gradient(155deg, rgba(22, 40, 34, 0.94) 0%, rgba(12, 23, 19, 0.96) 100%);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 32px 30px;
+      margin-bottom: 26px;
+      box-shadow: var(--shadow-card);
+    }
+
+    .kicker {
+      font-size: 0.76rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--gold);
+      margin-bottom: 10px;
+      display: block;
+    }
+
+    .hero h1 {
+      font-family: var(--font-serif);
+      font-size: clamp(1.75rem, 3.3vw, 2.55rem);
+      line-height: 1.18;
+      letter-spacing: -0.01em;
+      color: var(--text-main);
+      margin-bottom: 12px;
+    }
+
+    .hero-lead {
+      color: var(--text-soft);
+      font-size: 0.98rem;
+      margin-bottom: 18px;
+      max-width: 64ch;
+    }
+
+    .quick-jumps {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .jump-chip {
+      font-size: 0.81rem;
+      font-weight: 600;
+      padding: 7px 13px;
+      border-radius: var(--radius-pill);
+      background: var(--surface-2);
+      border: 1px solid var(--border-subtle);
+      color: var(--gold-bright);
+    }
+
+    .jump-chip:hover {
+      background: var(--gold-tint);
+      border-color: var(--gold);
+    }
+
+    .crest-card {
+      background: rgba(7, 14, 12, 0.65);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 20px;
+      text-align: center;
+    }
+
+    .crest-meta {
+      margin-top: 10px;
+      font-size: 0.82rem;
+      color: var(--text-soft);
+    }
+
+    .workspace-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 24px;
+      margin-bottom: 24px;
+    }
+
+    .panel {
+      background: var(--surface-1);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 26px 24px;
+      box-shadow: var(--shadow-card);
+    }
+
+    .panel.full-span {
+      grid-column: 1 / -1;
+    }
+
+    .panel-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 12px;
+      margin-bottom: 16px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid rgba(212, 175, 106, 0.14);
+      flex-wrap: wrap;
+    }
+
+    .panel-step {
+      font-size: 0.74rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--gold);
+      display: block;
+      margin-bottom: 3px;
+    }
+
+    .panel h2 {
+      font-family: var(--font-serif);
+      font-size: 1.35rem;
+      line-height: 1.25;
+      color: var(--text-main);
+    }
+
+    .panel-sub {
+      color: var(--text-soft);
+      font-size: 0.9rem;
+      margin-bottom: 16px;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+
+    .field {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+
+    .field label {
+      font-size: 0.81rem;
+      font-weight: 600;
+      color: var(--gold-bright);
+    }
+
+    select, input[type="text"] {
+      background: var(--bg-deep);
+      color: var(--text-main);
+      border: 1px solid rgba(212, 175, 106, 0.28);
+      border-radius: 10px;
+      padding: 10px 12px;
+      font-family: inherit;
+      font-size: 0.9rem;
+      width: 100%;
+    }
+
+    select:focus, input[type="text"]:focus {
+      outline: none;
+      border-color: var(--gold);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      font-family: inherit;
+      font-size: 0.9rem;
+      font-weight: 700;
+      padding: 10px 18px;
+      border-radius: var(--radius-pill);
+      border: 1px solid transparent;
+      cursor: pointer;
+      transition: transform 0.14s ease, background-color 0.16s ease, border-color 0.16s ease;
+    }
+
+    .btn:active {
+      transform: scale(0.98);
+    }
+
+    .btn-gold {
+      background: var(--gold);
+      color: var(--bg-deep);
+    }
+
+    .btn-gold:hover {
+      background: var(--gold-bright);
+      color: var(--bg-deep);
+    }
+
+    .btn-outline {
+      background: var(--surface-2);
+      color: var(--text-main);
+      border-color: var(--border-subtle);
+    }
+
+    .btn-outline:hover {
+      border-color: var(--gold);
+      color: var(--gold-bright);
+    }
+
+    .btn-outline.active {
+      background: var(--gold-tint);
+      border-color: var(--gold);
+      color: var(--gold-bright);
+    }
+
+    .casting-card {
+      margin-top: 14px;
+      background: var(--surface-2);
+      border: 1px solid var(--border-strong);
+      border-radius: var(--radius-md);
+      padding: 16px;
+    }
+
+    .casting-card h3 {
+      font-family: var(--font-serif);
+      font-size: 1.18rem;
+      color: var(--gold-bright);
+      margin-bottom: 4px;
+    }
+
+    .casting-meta {
+      font-size: 0.86rem;
+      color: var(--text-soft);
+      margin-top: 6px;
+    }
+
+    .roster-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 10px;
+      margin-top: 16px;
+    }
+
+    .roster-item {
+      background: rgba(7, 14, 12, 0.55);
+      border: 1px solid rgba(212, 175, 106, 0.16);
+      border-radius: 10px;
+      padding: 11px 12px;
+      font-size: 0.83rem;
+    }
+
+    .roster-item strong {
+      color: var(--gold-bright);
+      display: block;
+      font-size: 0.9rem;
+    }
+
+    .roster-item input {
+      margin-top: 7px;
+      padding: 6px 9px;
+      font-size: 0.8rem;
+    }
+
+    /* Act Timer */
+    .act-tabs {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+      margin-bottom: 14px;
+    }
+
+    .act-tab {
+      background: var(--surface-2);
+      color: var(--text-soft);
+      border: 1px solid var(--border-subtle);
+      border-radius: 10px;
+      padding: 9px 8px;
+      cursor: pointer;
+      font-weight: 700;
+      font-size: 0.82rem;
+      text-align: center;
+    }
+
+    .act-tab.active {
+      background: var(--gold-tint);
+      border-color: var(--gold);
+      color: var(--gold-bright);
+    }
+
+    .timer-readout-box {
+      background: var(--bg-deep);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 18px 16px;
+      text-align: center;
+      margin-bottom: 14px;
+    }
+
+    .timer-digits {
+      font-family: var(--font-serif);
+      font-size: clamp(2.4rem, 5vw, 3.3rem);
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      color: var(--gold-bright);
+      line-height: 1.05;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .timer-cue {
+      font-size: 0.85rem;
+      color: var(--text-soft);
+      margin-top: 8px;
+    }
+
+    .progress-track {
+      height: 7px;
+      background: rgba(255, 255, 255, 0.08);
+      border-radius: var(--radius-pill);
+      overflow: hidden;
+      margin-top: 12px;
+    }
+
+    .progress-fill {
+      height: 100%;
+      width: 100%;
+      background: linear-gradient(90deg, var(--gold) 0%, var(--success) 100%);
+      transition: width 0.3s linear;
+    }
+
+    .timer-controls {
+      display: flex;
+      gap: 8px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    /* Soundboard */
+    .cue-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+
+    .cue-pad {
+      background: var(--surface-2);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 15px 14px;
+      text-align: left;
+      color: var(--text-main);
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      transition: border-color 0.16s ease, background-color 0.16s ease, transform 0.12s ease;
+    }
+
+    .cue-pad:hover {
+      border-color: var(--gold);
+      background: var(--surface-3);
+    }
+
+    .cue-pad[data-playing="true"] {
+      border-color: var(--success);
+      background: rgba(123, 212, 168, 0.12);
+    }
+
+    .cue-pad-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.76rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      color: var(--gold);
+    }
+
+    .cue-pad strong {
+      font-family: var(--font-serif);
+      font-size: 1.04rem;
+      color: var(--text-main);
+    }
+
+    .cue-pad small {
+      font-size: 0.8rem;
+      color: var(--text-soft);
+      line-height: 1.4;
+    }
+
+    .memo-timeline {
+      background: var(--bg-deep);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 14px 16px;
+      margin-bottom: 16px;
+    }
+
+    .memo-stages {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    .memo-stage {
+      background: var(--surface-1);
+      border: 1px solid rgba(212, 175, 106, 0.16);
+      border-radius: 10px;
+      padding: 9px 11px;
+      font-size: 0.81rem;
+      color: var(--text-soft);
+      transition: border-color 0.15s ease, background-color 0.15s ease, color 0.15s ease;
+    }
+
+    .memo-stage.active {
+      border-color: var(--gold-bright);
+      background: var(--gold-tint);
+      color: #ffffff;
+    }
+
+    .volume-bar {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 0.84rem;
+      color: var(--text-soft);
+      margin-bottom: 18px;
+      flex-wrap: wrap;
+    }
+
+    .volume-bar input[type="range"] {
+      accent-color: var(--gold);
+      width: 180px;
+    }
+
+    .clues-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(235px, 1fr));
+      gap: 12px;
+      margin-top: 10px;
+    }
+
+    .clue-card {
+      background: rgba(7, 14, 12, 0.62);
+      border: 1px solid var(--border-subtle);
+      border-radius: 12px;
+      padding: 13px 14px;
+    }
+
+    .clue-card h4 {
+      font-family: var(--font-serif);
+      font-size: 0.96rem;
+      color: var(--gold-bright);
+      margin-bottom: 6px;
+    }
+
+    .clue-body {
+      font-size: 0.83rem;
+      color: var(--text-soft);
+      margin-top: 8px;
+    }
+
+    .clue-card:not(.revealed) .clue-body {
+      display: none;
+    }
+
+    /* Tally */
+    .tally-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 8px;
+      font-size: 0.85rem;
+    }
+
+    .tally-bar-wrap {
+      flex: 1;
+      height: 8px;
+      background: rgba(255, 255, 255, 0.08);
+      border-radius: var(--radius-pill);
+      overflow: hidden;
+    }
+
+    .tally-bar {
+      height: 100%;
+      background: var(--gold);
+    }
+
+    /* Sealed Solution Vault */
+    .vault-box {
+      background: linear-gradient(155deg, rgba(27, 18, 22, 0.92), rgba(14, 24, 20, 0.96));
+      border: 1px solid rgba(212, 175, 106, 0.38);
+      border-radius: var(--radius-lg);
+      padding: 24px;
+      text-align: center;
+    }
+
+    .btn-seal {
+      background: var(--crimson);
+      color: #ffffff;
+      border: 1px solid rgba(255, 214, 219, 0.35);
+      padding: 12px 24px;
+      font-size: 0.94rem;
+    }
+
+    .btn-seal:hover {
+      background: #a4303e;
+    }
+
+    .btn-seal[data-armed="true"] {
+      background: var(--gold);
+      color: var(--bg-deep);
+      border-color: var(--gold-bright);
+    }
+
+    .vault-output {
+      margin-top: 18px;
+      text-align: left;
+      background: rgba(7, 14, 12, 0.78);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 18px;
+    }
+
+    .buy-banner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      background: linear-gradient(135deg, #152821 0%, #0f1d18 100%);
+      border: 1px solid var(--border-strong);
+      border-radius: var(--radius-lg);
+      padding: 26px 28px;
+      margin-top: 26px;
+    }
+
+    .price-tag {
+      font-family: var(--font-serif);
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--gold-bright);
+    }
+
+    .faq-list {
+      display: grid;
+      gap: 10px;
+      margin-top: 14px;
+    }
+
+    details.faq-item {
+      background: var(--surface-1);
+      border: 1px solid var(--border-subtle);
+      border-radius: 12px;
+      padding: 13px 16px;
+    }
+
+    details.faq-item summary {
+      cursor: pointer;
+      font-weight: 700;
+      color: var(--gold-bright);
+      font-size: 0.93rem;
+    }
+
+    details.faq-item p {
+      margin-top: 8px;
+      font-size: 0.88rem;
+      color: var(--text-soft);
+    }
+
+    footer {
+      margin-top: 44px;
+      padding-top: 24px;
+      border-top: 1px solid var(--border-subtle);
+      text-align: center;
+      font-size: 0.82rem;
+      color: var(--text-muted);
+    }
+
+    @media (max-width: 860px) {
+      .hero, .workspace-grid {
+        grid-template-columns: 1fr;
+      }
+      .memo-stages, .act-tabs {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <span data-lang="fr">🕯️ Console Hôte 100 % Sans Spoiler • Manoir de Val-d'Or (23h40) • Compatible Hors-Ligne &amp; Mobile</span>
+    <span data-lang="en">🕯️ 100% Spoiler-Free Host Console • Valmont Manor (11:40 PM) • Offline &amp; Mobile Ready</span>
+  </div>
+
+  <div class="container">
+    <header class="site-header">
+      <a class="brand-link" href="https://yannabadie.github.io/cozy-festive-studio-2026/">
+        <svg width="26" height="26" viewBox="0 0 28 28" fill="none" aria-hidden="true">
+          <circle cx="14" cy="14" r="12.5" stroke="#d4af6a" stroke-width="1.6"/>
+          <path d="M14 6L16.3 11.7L22 14L16.3 16.3L14 22L11.7 16.3L6 14L11.7 11.7L14 6Z" fill="#d4af6a"/>
+        </svg>
+        <span>YGN STUDIO</span>
+      </a>
+
+      <div class="header-actions">
+        <a class="nav-pill" href="https://yannabadie.github.io/cozy-festive-studio-2026/jeu-enquete-noel-murder-mystery-pdf.html">
+          <span data-lang="fr">Présentation du Kit PDF</span>
+          <span data-lang="en">Printable Kit Overview</span>
+        </a>
+        <a class="nav-pill" href="https://buy.stripe.com/28E7sKfnS0PN1eX6vf2cg09">
+          <span data-lang="fr">Obtenir le Kit Complet (19 €)</span>
+          <span data-lang="en">Get Full Kit (19 €)</span>
+        </a>
+        <div class="lang-switch" role="group" aria-label="Language selector">
+          <button type="button" id="btn-fr" class="active">FR</button>
+          <button type="button" id="btn-en">EN</button>
+        </div>
+      </div>
+    </header>
+
+    <section class="hero">
+      <div>
+        <span class="kicker">
+          <span data-lang="fr">ÉDITION HÔTE CLÉ EN MAIN • 6 À 8 JOUEURS • ZÉRO SPOILER</span>
+          <span data-lang="en">TURNKEY HOST EDITION • 6 TO 8 PLAYERS • ZERO SPOILERS</span>
+        </span>
+        <h1>
+          <span data-lang="fr">Compagnon Maître du Jeu — Le Mystère du Réveillon Doré</span>
+          <span data-lang="en">Interactive Host Companion — The Midnight Mistletoe Mystery</span>
+        </h1>
+        <p class="hero-lead">
+          <span data-lang="fr">Animez votre huis clos aux chandelles au Manoir de Val-d'Or tout en incarnant vous-même l'un des suspects : attribuez les 6 rôles en 30 secondes, cadencez les 3 actes du dîner, déclenchez les effets sonores Web Audio (dont le mémo vocal 23h42 d'Inès) et dépouillez les votes autour de la table.</span>
+          <span data-lang="en">Run your candlelit Valmont Manor whodunit while playing a suspect yourself: match guests to all 6 roles, pace Acts I–III, trigger procedural Web Audio cues (including Ines's 11:42 PM voice memo), and tally final table ballots spoiler-free.</span>
+        </p>
+        <div class="quick-jumps">
+          <a class="jump-chip" href="#casting-quiz"><span data-lang="fr">1. Casting 6 Suspects</span><span data-lang="en">1. 6-Suspect Casting</span></a>
+          <a class="jump-chip" href="#act-timer"><span data-lang="fr">2. Chronomètre Actes I–III</span><span data-lang="en">2. Act I–III Timer</span></a>
+          <a class="jump-chip" href="#soundboard-panel"><span data-lang="fr">3. Soundboard &amp; Mémo 23h42</span><span data-lang="en">3. Soundboard &amp; 23h42 Memo</span></a>
+          <a class="jump-chip" href="#accusation-form"><span data-lang="fr">4. Votes &amp; Enveloppe Scellée</span><span data-lang="en">4. Ballots &amp; Sealed Reveal</span></a>
+        </div>
+      </div>
+
+      <div class="crest-card">
+        <svg width="136" height="136" viewBox="0 0 140 140" fill="none" aria-hidden="true" style="margin:0 auto;display:block;">
+          <circle cx="70" cy="70" r="64" fill="#0b1411" stroke="#d4af6a" stroke-width="2"/>
+          <circle cx="70" cy="70" r="56" stroke="#d4af6a" stroke-opacity="0.35" stroke-dasharray="4 4"/>
+          <path d="M36 92H104" stroke="#d4af6a" stroke-width="2.6" stroke-linecap="round"/>
+          <path d="M44 92C44 74 55 62 70 62C85 62 96 74 96 92" fill="#162822" stroke="#d4af6a" stroke-width="2.4"/>
+          <circle cx="70" cy="56" r="5" fill="#d4af6a"/>
+          <path d="M70 30L80 42L70 50L60 42L70 30Z" fill="#7bd4a8" stroke="#ebd19d" stroke-width="1.6"/>
+          <text x="70" y="114" text-anchor="middle" fill="#ebd19d" font-family="Georgia, serif" font-size="12" font-weight="bold">23H40 • VAL-D'OR</text>
+        </svg>
+        <div class="crest-meta">
+          <span data-lang="fr">6 Suspects • 4 Pièces à Conviction • 65 min</span>
+          <span data-lang="en">6 Suspects • 4 Forensic Clues • 65 min</span>
+        </div>
+      </div>
+    </section>
+
+    <div class="workspace-grid">
+      <!-- PANEL 1: CASTING QUIZ -->
+      <section class="panel" id="casting-quiz">
+        <div class="panel-head">
+          <div>
+            <span class="panel-step"><span data-lang="fr">Préparation • Attribution des rôles</span><span data-lang="en">Prep • Role Assignment</span></span>
+            <h2><span data-lang="fr">Quiz de Casting des 6 Suspects</span><span data-lang="en">6-Suspect Personality Casting Quiz</span></h2>
+          </div>
+        </div>
+        <p class="panel-sub">
+          <span data-lang="fr">Sélectionnez le tempérament d'un convive pour lui recommander son personnage idéal au Manoir de Val-d'Or (garanti sans spoiler).</span>
+          <span data-lang="en">Pick a guest's dinner-party vibe to match them with their ideal Valmont Manor suspect dossier (100% spoiler-free).</span>
+        </p>
+
+        <div class="form-row">
+          <div class="field">
+            <label for="quiz-vibe"><span data-lang="fr">Énergie à table</span><span data-lang="en">Dinner Table Energy</span></label>
+            <select id="quiz-vibe">
+              <option value="flamboyant theatrical">Flamboyant &amp; Théâtral / Theatrical</option>
+              <option value="calm creative">Calme &amp; Créatif / Poised Artisan</option>
+              <option value="analytical formal">Analytique &amp; Stratège / Strategist</option>
+              <option value="mysterious elegant">Mystérieux &amp; Raffiné / Enigmatic</option>
+              <option value="warm observant">Chaleureux &amp; Observateur / Warm Classic</option>
+              <option value="curious witty">Curieux &amp; Piquant / Witty Storyteller</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="quiz-prop"><span data-lang="fr">Accessoire fétiche</span><span data-lang="en">Signature Prop</span></label>
+            <select id="quiz-prop">
+              <option value="champagne velvet">Coupe de champagne &amp; velours</option>
+              <option value="pastry dessert">Plateau doré &amp; haute pâtisserie</option>
+              <option value="watch legal">Montre à gousset &amp; dossier</option>
+              <option value="gems perfume">Loupe de joaillier &amp; parfum rare</option>
+              <option value="fireside horology">Allumettes &amp; horlogerie ancienne</option>
+              <option value="notebook writer">Carnet cuir rouge &amp; mémo vocal</option>
+            </select>
+          </div>
+        </div>
+
+        <button type="button" class="btn btn-gold" id="btn-match-role">
+          <span data-lang="fr">Attribuer le rôle recommandé</span>
+          <span data-lang="en">Match Ideal Suspect Role</span>
+        </button>
+
+        <div class="casting-card" id="casting-result" aria-live="polite"></div>
+
+        <div class="roster-grid" id="suspects-roster"></div>
+      </section>
+
+      <!-- PANEL 2: ACT I-III TIMER -->
+      <section class="panel" id="act-timer">
+        <div class="panel-head">
+          <div>
+            <span class="panel-step"><span data-lang="fr">Cadence du dîner • 3 Actes</span><span data-lang="en">Dinner Pacing • 3 Acts</span></span>
+            <h2><span data-lang="fr">Chronomètre Théâtral (Actes I à III)</span><span data-lang="en">Three-Act Manor Timer</span></h2>
+          </div>
+        </div>
+        <p class="panel-sub">
+          <span data-lang="fr">Gardez un rythme fluide de l'apéritif jusqu'au décachetage final. Le gong du manoir retentit automatiquement en fin d'acte.</span>
+          <span data-lang="en">Keep brisk theatrical pacing from welcome drinks to the final reveal. The manor gong chimes automatically when time expires.</span>
+        </p>
+
+        <div class="act-tabs" role="tablist">
+          <button type="button" class="act-tab active" id="btn-act-1" data-act="0">Acte I • 15m</button>
+          <button type="button" class="act-tab" id="btn-act-2" data-act="1">Acte II • 30m</button>
+          <button type="button" class="act-tab" id="btn-act-3" data-act="2">Acte III • 20m</button>
+        </div>
+
+        <div class="timer-readout-box">
+          <div id="act-phase-title" style="font-weight:700;color:var(--gold);font-size:0.9rem;margin-bottom:4px;"></div>
+          <div class="timer-digits" id="act-timer-display">15:00</div>
+          <p class="timer-cue" id="act-phase-cue"></p>
+          <div class="progress-track">
+            <div class="progress-fill" id="act-timer-progress"></div>
+          </div>
+        </div>
+
+        <div class="timer-controls">
+          <button type="button" class="btn btn-gold" id="btn-act-start">
+            <span data-lang="fr">▶ Démarrer l'Acte</span>
+            <span data-lang="en">▶ Start Act</span>
+          </button>
+          <button type="button" class="btn btn-outline" id="btn-act-pause">
+            <span data-lang="fr">⏸ Pause</span>
+            <span data-lang="en">⏸ Pause</span>
+          </button>
+          <button type="button" class="btn btn-outline" id="btn-act-reset">
+            <span data-lang="fr">↺ Réinitialiser</span>
+            <span data-lang="en">↺ Reset</span>
+          </button>
+        </div>
+      </section>
+
+      <!-- PANEL 3: SOUNDBOARD & CLUES -->
+      <section class="panel full-span" id="soundboard-panel">
+        <div class="panel-head">
+          <div>
+            <span class="panel-step"><span data-lang="fr">Synthèse Web Audio Temps Réel • Zéro Fichier Externe</span><span data-lang="en">Real-Time Web Audio Synthesis • Zero External Files</span></span>
+            <h2><span data-lang="fr">Soundboard Acoustique du Manoir &amp; Pièces à Conviction</span><span data-lang="en">Valmont Manor Soundboard &amp; Forensic Clues</span></h2>
+          </div>
+          <div id="audio-status-badge" style="font-size:0.82rem;color:var(--success);font-weight:700;">
+            <span data-lang="fr">Prêt • Synthétiseur Web Audio local</span>
+            <span data-lang="en">Ready • Local Web Audio Synthesizer</span>
+          </div>
+        </div>
+
+        <div class="volume-bar">
+          <label for="mystery-volume">
+            <span data-lang="fr">Volume Maître du Salon :</span>
+            <span data-lang="en">Salon Master Volume:</span>
+          </label>
+          <input type="range" id="mystery-volume" min="0" max="100" value="75" />
+          <span id="mystery-volume-val">75%</span>
+        </div>
+
+        <div class="cue-grid">
+          <button type="button" class="cue-pad" id="btn-cue-storm" data-playing="false">
+            <span class="cue-pad-top"><span>AMBIANCE BOUCLE</span><span>23H30</span></span>
+            <strong><span data-lang="fr">🌨️ Tempête Alpine &amp; Cheminée</span><span data-lang="en">🌨️ Alpine Blizzard &amp; Hearth</span></strong>
+            <small><span data-lang="fr">Vent filtré sur les vitraux gothiques et crépitement continu de l'âtre (Activer / Couper).</span><span data-lang="en">Howling wind against gothic panes &amp; warm hearth crackle (Toggle loop).</span></small>
+          </button>
+
+          <button type="button" class="cue-pad" id="btn-cue-blackout" data-playing="false">
+            <span class="cue-pad-top"><span>INCIDENT</span><span>23H39 → 23H40</span></span>
+            <strong><span data-lang="fr">⚡ Étincelle &amp; Coupure 23h40</span><span data-lang="en">⚡ 11:39 Spark &amp; 11:40 Blackout</span></strong>
+            <small><span data-lang="fr">Arc électrique bref près de la fenêtre gothique suivi du claquement lourd du disjoncteur.</span><span data-lang="en">Brief electrical arc followed by heavy breaker trip and power-down drop.</span></small>
+          </button>
+
+          <button type="button" class="cue-pad" id="btn-cue-ines-memo" data-playing="false">
+            <span class="cue-pad-top"><span>INDICE AUDIO CLÉ</span><span>23H42</span></span>
+            <strong><span data-lang="fr">📱 Mémo Vocal 23h42 d'Inès</span><span data-lang="en">📱 Ines's 11:42 PM Voice Memo</span></strong>
+            <small><span data-lang="fr">Séquence acoustique à 3 temps captée dans le noir complet au centre de la table.</span><span data-lang="en">3-stage forensic audio sequence captured in pitch darkness at 11:42 PM.</span></small>
+          </button>
+
+          <button type="button" class="cue-pad" id="btn-cue-gong" data-playing="false">
+            <span class="cue-pad-top"><span>SOLENNEL</span><span>ACTE III</span></span>
+            <strong><span data-lang="fr">🔔 Gong d'Accusation Finale</span><span data-lang="en">🔔 Final Accusation Gong</span></strong>
+            <small><span data-lang="fr">Résonance harmonique grave pour clore les débats et recueillir les bulletins.</span><span data-lang="en">Deep manor gong resonance calling all investigators to cast final ballots.</span></small>
+          </button>
+        </div>
+
+        <div class="memo-timeline" id="ines-memo-stages">
+          <div style="font-size:0.84rem;font-weight:700;color:var(--gold-bright);">
+            <span data-lang="fr">Analyseur Acoustique du Mémo 23h42 d'Inès Valmont (Acte II) :</span>
+            <span data-lang="en">Acoustic Sequence Analyzer — Ines Valmont's 11:42 PM Memo (Act II):</span>
+          </div>
+          <div class="memo-stages">
+            <div class="memo-stage" id="memo-stage-1">
+              <strong>t = +0.45s</strong><br/>
+              <span data-lang="fr">1. Tintement métallique de la cloche d'argent</span>
+              <span data-lang="en">1. Silver cloche metallic clang</span>
+            </div>
+            <div class="memo-stage" id="memo-stage-2">
+              <strong>t = +1.95s</strong><br/>
+              <span data-lang="fr">2. Choc feutré &amp; verre de montre « V.S. » brisé</span>
+              <span data-lang="en">2. Velvet collision &amp; 'V.S.' watch crystal shatter</span>
+            </div>
+            <div class="memo-stage" id="memo-stage-3">
+              <strong>t = +3.35s</strong><br/>
+              <span data-lang="fr">3. Bruissement du feuillage de houx central</span>
+              <span data-lang="en">3. Stiff holly centerpiece leaves rustling</span>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <h3 style="font-family:var(--font-serif);font-size:1.12rem;color:var(--text-main);margin-bottom:4px;">
+            <span data-lang="fr">Les 4 Pièces à Conviction de l'Acte II (Sans Spoiler)</span>
+            <span data-lang="en">Act II Forensic Clues Tracker (Spoiler-Free)</span>
+          </h3>
+          <p style="font-size:0.84rem;color:var(--text-soft);">
+            <span data-lang="fr">Dévoilez chaque indice au centre de la table au début du plat principal :</span>
+            <span data-lang="en">Reveal each forensic clue at the center of the table during the main course:</span>
+          </p>
+          <div class="clues-grid" id="clues-tracker"></div>
+        </div>
+      </section>
+
+      <!-- PANEL 4: BALLOTS & TALLY -->
+      <section class="panel" id="accusation-panel">
+        <div class="panel-head">
+          <div>
+            <span class="panel-step"><span data-lang="fr">Acte III • Dépouillement Officiel</span><span data-lang="en">Act III • Official Table Tally</span></span>
+            <h2><span data-lang="fr">Urne des Bulletins d'Accusation</span><span data-lang="en">Investigator Accusation Ballots</span></h2>
+          </div>
+        </div>
+
+        <form id="accusation-form">
+          <div class="form-row">
+            <div class="field">
+              <label for="ballot-voter"><span data-lang="fr">Prénom de l'enquêteur</span><span data-lang="en">Investigator Name</span></label>
+              <input type="text" id="ballot-voter" placeholder="Ex: Clara" />
+            </div>
+            <div class="field">
+              <label for="ballot-accused"><span data-lang="fr">J'accuse formellement</span><span data-lang="en">Formally Accuse</span></label>
+              <select id="ballot-accused"></select>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="field">
+              <label for="ballot-best-actor"><span data-lang="fr">Prix du Meilleur Acteur</span><span data-lang="en">Best Dramatic Performance</span></label>
+              <select id="ballot-best-actor"></select>
+            </div>
+            <div class="field">
+              <label for="ballot-motive"><span data-lang="fr">Mobile supposé (optionnel)</span><span data-lang="en">Suspected Motive (optional)</span></label>
+              <input type="text" id="ballot-motive" placeholder="23h40..." />
+            </div>
+          </div>
+          <div style="display:flex;gap:8px;flex-wrap:wrap;">
+            <button type="submit" class="btn btn-gold" id="btn-add-ballot">
+              <span data-lang="fr">Enregistrer le bulletin</span>
+              <span data-lang="en">Record Ballot</span>
+            </button>
+            <button type="button" class="btn btn-outline" id="btn-clear-ballots">
+              <span data-lang="fr">Vider l'urne</span>
+              <span data-lang="en">Clear Ballots</span>
+            </button>
+          </div>
+        </form>
+
+        <div id="accusation-tally-output" style="margin-top:16px;" aria-live="polite"></div>
+      </section>
+
+      <!-- PANEL 5: DOUBLE-LOCKED SOLUTION VAULT -->
+      <section class="panel" id="solution-vault-panel">
+        <div class="panel-head">
+          <div>
+            <span class="panel-step"><span data-lang="fr">Page 10 Scellée • Double Verrou Anti-Spoiler</span><span data-lang="en">Sealed Page 10 • Two-Step Anti-Spoiler Lock</span></span>
+            <h2><span data-lang="fr">Coffre de Révélation Finale</span><span data-lang="en">Sealed Final Solution Vault</span></h2>
+          </div>
+        </div>
+        <div class="vault-box">
+          <p style="font-size:0.9rem;color:var(--text-soft);margin-bottom:16px;">
+            <span data-lang="fr">Ne décachetez cette enveloppe qu'une fois tous les votes enregistrés ! Un premier clic arme l'ouverture, un second clic confirme le décachetage.</span>
+            <span data-lang="en">Unseal ONLY after every guest has voted! First click arms the seal; second click confirms and reveals the culprit.</span>
+          </p>
+
+          <div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap;">
+            <button type="button" class="btn btn-seal" id="btn-unlock-solution" data-armed="false">
+              <span data-lang="fr">🔒 Décacheter la Solution Finale (1/2)</span>
+              <span data-lang="en">🔒 Unseal Final Solution (1/2)</span>
+            </button>
+            <button type="button" class="btn btn-outline" id="btn-relock-solution" style="display:none;">
+              <span data-lang="fr">Refermer l'enveloppe</span>
+              <span data-lang="en">Re-seal Envelope</span>
+            </button>
+          </div>
+
+          <div class="vault-output" id="solution-vault-output" aria-live="polite">
+            <span data-lang="fr">Enveloppe scellée intacte — zéro indice sur l'identité du coupable n'est affiché tant que le double déverrouillage n'est pas confirmé.</span>
+            <span data-lang="en">Sealed envelope intact — zero culprit details are exposed until two-step confirmation is completed.</span>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- CONVERSION BANNER -->
+    <section class="buy-banner">
+      <div>
+        <span class="kicker"><span data-lang="fr">Kit Imprimable FR (A4) + EN (US Letter) Inclus</span><span data-lang="en">Printable FR (A4) + EN (US Letter) Kit Included</span></span>
+        <h2 style="font-family:var(--font-serif);font-size:1.5rem;margin-bottom:6px;">
+          <span data-lang="fr">Vous n'avez pas encore les 6 Dossiers Suspects &amp; Menus Imprimables ?</span>
+          <span data-lang="en">Need the Printable Suspect Dossiers, Clues &amp; Place Cards?</span>
+        </h2>
+        <p style="color:var(--text-soft);font-size:0.92rem;max-width:62ch;">
+          <span data-lang="fr">Téléchargez instantanément les 2 livrets PDF complets (FR + EN, 10 pages chacun : Guide Hôte, Rapport d'incident, 6 fiches personnages, 4 indices illustrés, menu &amp; marque-places, bulletins et solution) + ce compagnon hors-ligne.</span>
+          <span data-lang="en">Instantly download both complete 10-page printable PDF kits (English US Letter + French A4: Host Guide, Incident Brief, 6 Dossiers, 4 Clues, Menu &amp; Place Cards, Ballots) + this offline web companion.</span>
+        </p>
+      </div>
+      <div style="display:flex;flex-direction:column;align-items:flex-end;gap:10px;">
+        <div class="price-tag">19,00 €</div>
+        <div style="display:flex;gap:10px;flex-wrap:wrap;">
+          <a class="btn btn-gold" href="https://buy.stripe.com/28E7sKfnS0PN1eX6vf2cg09">
+            <span data-lang="fr">Commander sur Stripe (19 €) →</span>
+            <span data-lang="en">Instant Stripe Checkout (19 €) →</span>
+          </a>
+          <a class="btn btn-outline" href="https://yannabadi.gumroad.com/l/couwu">
+            <span data-lang="fr">Via Gumroad (International)</span>
+            <span data-lang="en">Via Gumroad (Global VAT)</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section style="margin-top:32px;">
+      <h2 style="font-family:var(--font-serif);font-size:1.4rem;">
+        <span data-lang="fr">Questions Fréquentes — Organisation de la Soirée</span>
+        <span data-lang="en">Frequently Asked Questions — Hosting Valmont Manor</span>
+      </h2>
+      <div class="faq-list">
+        <details class="faq-item" open>
+          <summary>
+            <span data-lang="fr">Puis-je jouer moi-même un suspect tout en pilotant cette console ?</span>
+            <span data-lang="en">Can the host play a suspect while operating this console?</span>
+          </summary>
+          <p>
+            <span data-lang="fr">Absolument ! Toute la page est garantie sans spoiler : même en distribuant les rôles, en lançant le mémo vocal 23h42 d'Inès et en enregistrant les votes, vous ne verrez jamais la solution avant le double clic final de l'Acte III.</span>
+            <span data-lang="en">Yes! Every panel is strictly spoiler-free: you can cast guests, play Ines's 11:42 PM audio clue, and tally votes without seeing any culprit reveal until everyone unseals the vault together in Act III.</span>
+          </p>
+        </details>
+        <details class="faq-item">
+          <summary>
+            <span data-lang="fr">Comment fonctionne la console une fois le fichier ZIP décompressé sur ordinateur ou tablette ?</span>
+            <span data-lang="en">Does this work offline from the unzipped bundle folder?</span>
+          </summary>
+          <p>
+            <span data-lang="fr">Ouvrez simplement <code>compagnon-enquete-reveillon-dore.html</code> depuis le dossier décompressé : le moteur <code>b2c_companions.js</code> génère tous les sons localement sans aucune dépendance externe ni connexion Wi-Fi.</span>
+            <span data-lang="en">Simply open <code>compagnon-enquete-reveillon-dore.html</code> inside your unzipped folder: <code>b2c_companions.js</code> synthesizes every sound locally with zero external dependencies or Wi-Fi required.</span>
+          </p>
+        </details>
+      </div>
+    </section>
+
+    <footer>
+      <p><strong>YGN Studio</strong> — Yann Abadie • 8 Rue Du Gypaète, 64000 Pau, France • <a href="mailto:yann.abadie@gmail.com">yann.abadie@gmail.com</a></p>
+      <p style="margin-top:6px;">
+        <span data-lang="fr">Prix nets en euros — <strong>TVA non applicable, art. 293 B du CGI</strong> • Création éditoriale et logicielle originale réalisée avec l'assistance transparente d'outils d'IA générative.</span>
+        <span data-lang="en">Net prices in EUR — <strong>VAT not applicable, art. 293 B of the French Tax Code (CGI)</strong> • Original interactive &amp; editorial work crafted with transparent AI-assisted tooling.</span>
+      </p>
+    </footer>
+  </div>
+
+  <script src="./b2c_companions.js"></script>
+  <script>
+    (function () {
+      'use strict';
+      var api = window.B2CCompanions;
+      if (!api) return;
+
+      var memStore = {};
+      function storeGet(k) {
+        try { return window.localStorage.getItem(k); } catch (_e) { return memStore[k] || null; }
+      }
+      function storeSet(k, v) {
+        memStore[k] = v;
+        try { window.localStorage.setItem(k, v); } catch (_e) {}
+      }
+
+      var currentLang = 'fr';
+      var savedLang = storeGet('ygn_studio_lang');
+      if (savedLang === 'en' || savedLang === 'fr') currentLang = savedLang;
+
+      var guestAssignments = {};
+      try {
+        guestAssignments = JSON.parse(storeGet('ygn_mystery_guests') || '{}') || {};
+      } catch (_e) { guestAssignments = {}; }
+
+      var revealedClues = {};
+      var ballots = [];
+      try {
+        ballots = JSON.parse(storeGet('ygn_mystery_ballots') || '[]') || [];
+      } catch (_e) { ballots = []; }
+
+      var currentActIdx = 0;
+      var remainingSeconds = api.ACT_PHASES[0].seconds;
+      var actInterval = null;
+      var vaultUnlocked = false;
+      var audioEngine = api.createMysteryAudioEngine({ volume: 0.75 });
+
+      function esc(s) {
+        return String(s || '')
+          .replace(/&/g, '&amp;')
+          .replace(/</g, '&lt;')
+          .replace(/>/g, '&gt;')
+          .replace(/"/g, '&quot;');
+      }
+
+      function renderCastingMatch() {
+        var vibe = document.getElementById('quiz-vibe').value;
+        var prop = document.getElementById('quiz-prop').value;
+        var res = api.matchSuspectRole([vibe, prop], currentLang);
+        var box = document.getElementById('casting-result');
+        var lblRole = currentLang === 'en' ? 'Recommended Suspect #' + res.number : 'Suspect Recommandé #' + res.number;
+        var lblAlibi = currentLang === 'en' ? 'Round 1 Alibi:' : 'Alibi Tour 1 :';
+        var lblAttire = currentLang === 'en' ? 'Dress Code Tip:' : 'Conseil Tenue :';
+        box.innerHTML =
+          '<div style="font-size:0.76rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--gold);">' + esc(lblRole) + '</div>' +
+          '<h3>' + esc(res.name) + ' — <span style="font-weight:400;color:var(--text-main);">' + esc(res.role) + '</span></h3>' +
+          '<p class="casting-meta">' + esc(res.publicPersona) + '</p>' +
+          '<p class="casting-meta"><strong>' + esc(lblAlibi) + '</strong> ' + esc(res.alibi) + '</p>' +
+          '<p class="casting-meta"><strong>' + esc(lblAttire) + '</strong> ' + esc(res.attireTip) + '</p>';
+      }
+
+      function renderRoster() {
+        var grid = document.getElementById('suspects-roster');
+        var ph = currentLang === 'en' ? 'Assign guest name...' : 'Prénom du convive...';
+        grid.innerHTML = api.SUSPECTS.map(function (s) {
+          var loc = api.localizeSuspect(s, currentLang);
+          var assigned = guestAssignments[s.id] || '';
+          return (
+            '<div class="roster-item">' +
+              '<strong>#' + s.number + ' • ' + esc(loc.name) + '</strong>' +
+              '<div style="color:var(--text-soft);">' + esc(loc.role) + '</div>' +
+              '<input type="text" data-suspect-guest="' + esc(s.id) + '" value="' + esc(assigned) + '" placeholder="' + esc(ph) + '" />' +
+            '</div>'
+          );
+        }).join('');
+
+        var inputs = grid.querySelectorAll('input[data-suspect-guest]');
+        for (var i = 0; i < inputs.length; i++) {
+          inputs[i].addEventListener('input', function (ev) {
+            var sid = ev.target.getAttribute('data-suspect-guest');
+            guestAssignments[sid] = ev.target.value;
+            storeSet('ygn_mystery_guests', JSON.stringify(guestAssignments));
+          });
+        }
+      }
+
+      function formatMMSS(sec) {
+        var s = Math.max(0, Math.floor(sec));
+        var m = Math.floor(s / 60);
+        var r = s % 60;
+        return (m < 10 ? '0' + m : String(m)) + ':' + (r < 10 ? '0' + r : String(r));
+      }
+
+      function renderActTimer() {
+        var phase = api.ACT_PHASES[currentActIdx];
+        document.getElementById('act-phase-title').textContent = currentLang === 'en' ? phase.title_en : phase.title_fr;
+        document.getElementById('act-phase-cue').textContent = currentLang === 'en' ? phase.cue_en : phase.cue_fr;
+        document.getElementById('act-timer-display').textContent = formatMMSS(remainingSeconds);
+        var pct = phase.seconds > 0 ? Math.max(0, Math.min(100, (remainingSeconds / phase.seconds) * 100)) : 0;
+        document.getElementById('act-timer-progress').style.width = pct.toFixed(1) + '%';
+
+        for (var i = 0; i < 3; i++) {
+          var tab = document.getElementById('btn-act-' + (i + 1));
+          if (tab) {
+            tab.classList.toggle('active', i === currentActIdx);
+            tab.textContent = (currentLang === 'en' ? 'Act ' : 'Acte ') + ['I', 'II', 'III'][i] + ' • ' + api.ACT_PHASES[i].minutes + 'm';
+          }
+        }
+      }
+
+      function selectAct(idx) {
+        if (actInterval) { clearInterval(actInterval); actInterval = null; }
+        currentActIdx = idx;
+        remainingSeconds = api.ACT_PHASES[idx].seconds;
+        renderActTimer();
+      }
+
+      function renderClues() {
+        var wrap = document.getElementById('clues-tracker');
+        wrap.innerHTML = api.CLUES.map(function (cl) {
+          var isRev = !!revealedClues[cl.id];
+          var title = currentLang === 'en' ? cl.title_en : cl.title_fr;
+          var body = currentLang === 'en' ? cl.body_en : cl.body_fr;
+          var btnTxt = isRev
+            ? (currentLang === 'en' ? 'Hide Clue' : 'Masquer')
+            : (currentLang === 'en' ? 'Reveal Clue #' + cl.number : 'Dévoiler l’Indice #' + cl.number);
+          return (
+            '<div class="clue-card' + (isRev ? ' revealed' : '') + '" data-clue-id="' + esc(cl.id) + '">' +
+              '<h4>' + esc(title) + '</h4>' +
+              '<button type="button" class="btn btn-outline" style="padding:6px 12px;font-size:0.78rem;" data-toggle-clue="' + esc(cl.id) + '">' + esc(btnTxt) + '</button>' +
+              '<p class="clue-body">' + esc(body) + '</p>' +
+            '</div>'
+          );
+        }).join('');
+
+        var btns = wrap.querySelectorAll('button[data-toggle-clue]');
+        for (var i = 0; i < btns.length; i++) {
+          btns[i].addEventListener('click', function (ev) {
+            var cid = ev.currentTarget.getAttribute('data-toggle-clue');
+            revealedClues[cid] = !revealedClues[cid];
+            renderClues();
+          });
+        }
+      }
+
+      function populateBallotSelects() {
+        var accSel = document.getElementById('ballot-accused');
+        var actSel = document.getElementById('ballot-best-actor');
+        var prevAcc = accSel.value;
+        var prevAct = actSel.value;
+        var optsHtml = api.SUSPECTS.map(function (s) {
+          var loc = api.localizeSuspect(s, currentLang);
+          return '<option value="' + esc(s.id) + '">#' + s.number + ' — ' + esc(loc.name) + ' (' + esc(loc.role) + ')</option>';
+        }).join('');
+        accSel.innerHTML = optsHtml;
+        actSel.innerHTML = optsHtml;
+        if (prevAcc) accSel.value = prevAcc;
+        if (prevAct) actSel.value = prevAct;
+      }
+
+      function renderTally() {
+        var tally = api.tallyAccusationVotes(ballots, currentLang);
+        var out = document.getElementById('accusation-tally-output');
+        var rows = tally.tallies.map(function (t) {
+          return (
+            '<div class="tally-row">' +
+              '<span style="min-width:165px;font-weight:600;">' + esc(t.name) + '</span>' +
+              '<div class="tally-bar-wrap"><div class="tally-bar" style="width:' + t.percentage + '%;"></div></div>' +
+              '<span style="min-width:68px;text-align:right;color:var(--gold-bright);">' + t.votes + ' (' + t.percentage + '%)</span>' +
+            '</div>'
+          );
+        }).join('');
+
+        var actorLine = '';
+        if (tally.bestActorWinner) {
+          actorLine = '<p style="margin-top:8px;font-size:0.85rem;color:var(--success);">🎭 ' +
+            (currentLang === 'en' ? 'Best Dramatic Performance Leader: ' : 'En tête Prix d’Interprétation : ') +
+            '<strong>' + esc(tally.bestActorWinner.name) + '</strong> (' + tally.bestActorWinner.votes + ')</p>';
+        }
+
+        out.innerHTML =
+          '<p style="font-weight:700;color:var(--gold-bright);margin-bottom:10px;">' + esc(tally.summary) + '</p>' +
+          rows +
+          actorLine;
+      }
+
+      function renderVault() {
+        var btn = document.getElementById('btn-unlock-solution');
+        var relockBtn = document.getElementById('btn-relock-solution');
+        var out = document.getElementById('solution-vault-output');
+
+        if (!vaultUnlocked) {
+          relockBtn.style.display = 'none';
+          var armed = btn.getAttribute('data-armed') === 'true';
+          if (armed) {
+            btn.innerHTML = currentLang === 'en'
+              ? '⚠️ Confirm Final Unsealing Now (2/2)'
+              : '⚠️ Confirmer le Décachetage Définitif (2/2)';
+            out.innerHTML = currentLang === 'en'
+              ? '<strong style="color:var(--gold-bright);">Seal armed (Step 1/2):</strong> Click the gold button once more to confirm everyone has voted and reveal the Valmont Manor culprit.'
+              : '<strong style="color:var(--gold-bright);">Sceau armé (Étape 1/2) :</strong> Cliquez une seconde fois sur le bouton doré pour confirmer que tous les invités ont voté et révéler la vérité.';
+          } else {
+            btn.innerHTML = currentLang === 'en'
+              ? '🔒 Unseal Final Solution (1/2)'
+              : '🔒 Décacheter la Solution Finale (1/2)';
+            out.innerHTML = currentLang === 'en'
+              ? 'Sealed envelope intact — zero culprit details are exposed until two-step confirmation is completed.'
+              : 'Enveloppe scellée intacte — zéro indice sur l’identité du coupable n’est affiché tant que le double déverrouillage n’est pas confirmé.';
+          }
+          return;
+        }
+
+        var sol = api.unlockMysterySolution(api.CONFIRM_UNLOCK_TOKEN, currentLang);
+        btn.setAttribute('data-armed', 'false');
+        btn.innerHTML = currentLang === 'en' ? '✓ Envelope Unsealed' : '✓ Enveloppe Décachetée';
+        relockBtn.style.display = 'inline-flex';
+
+        var chainHtml = sol.clueChain.map(function (c) {
+          return '<li style="margin-bottom:5px;">' + esc(c) + '</li>';
+        }).join('');
+
+        out.innerHTML =
+          '<div style="font-size:0.78rem;font-weight:700;text-transform:uppercase;letter-spacing:0.09em;color:var(--crimson-text);margin-bottom:4px;">' +
+            (currentLang === 'en' ? 'OFFICIAL VALMONT MANOR REVEAL' : 'RÉVÉLATION OFFICIELLE — MANOIR DE VAL-D’OR') +
+          '</div>' +
+          '<h3 style="font-family:var(--font-serif);font-size:1.35rem;color:var(--gold-bright);margin-bottom:8px;">' +
+            esc(sol.culpritName) + ' — ' + esc(sol.culpritRole) +
+          '</h3>' +
+          '<p style="font-size:0.9rem;color:var(--text-main);margin-bottom:8px;"><strong>' +
+            (currentLang === 'en' ? 'Stolen Heirloom: ' : 'Joyau dérobé : ') + '</strong>' +
+            esc(sol.stolenObject) + ' (' + esc(sol.valueFormatted) + ')</p>' +
+          '<p style="font-size:0.9rem;color:var(--text-soft);margin-bottom:8px;">' + esc(sol.motiveAndTwist) + '</p>' +
+          '<p style="font-size:0.9rem;color:var(--success);margin-bottom:10px;"><strong>' +
+            (currentLang === 'en' ? 'Hiding Spot: ' : 'Cachette exacte : ') + '</strong>' + esc(sol.hidingSpot) + '</p>' +
+          '<ul style="padding-left:18px;font-size:0.84rem;color:var(--text-soft);">' + chainHtml + '</ul>';
+      }
+
+      function setLanguage(lang) {
+        currentLang = lang === 'en' ? 'en' : 'fr';
+        storeSet('ygn_studio_lang', currentLang);
+        document.documentElement.lang = currentLang;
+        document.body.classList.toggle('en', currentLang === 'en');
+        document.getElementById('btn-fr').classList.toggle('active', currentLang === 'fr');
+        document.getElementById('btn-en').classList.toggle('active', currentLang === 'en');
+        renderCastingMatch();
+        renderRoster();
+        renderActTimer();
+        renderClues();
+        populateBallotSelects();
+        renderTally();
+        renderVault();
+      }
+
+      // Wire events
+      document.getElementById('btn-fr').addEventListener('click', function () { setLanguage('fr'); });
+      document.getElementById('btn-en').addEventListener('click', function () { setLanguage('en'); });
+      document.getElementById('btn-match-role').addEventListener('click', renderCastingMatch);
+      document.getElementById('quiz-vibe').addEventListener('change', renderCastingMatch);
+      document.getElementById('quiz-prop').addEventListener('change', renderCastingMatch);
+
+      ['btn-act-1', 'btn-act-2', 'btn-act-3'].forEach(function (id, idx) {
+        document.getElementById(id).addEventListener('click', function () { selectAct(idx); });
+      });
+
+      document.getElementById('btn-act-start').addEventListener('click', function () {
+        if (actInterval) return;
+        actInterval = setInterval(function () {
+          if (remainingSeconds > 0) {
+            remainingSeconds -= 1;
+            renderActTimer();
+            if (remainingSeconds === 0) {
+              clearInterval(actInterval);
+              actInterval = null;
+              audioEngine.playCue('gong');
+            }
+          }
+        }, 1000);
+      });
+
+      document.getElementById('btn-act-pause').addEventListener('click', function () {
+        if (actInterval) { clearInterval(actInterval); actInterval = null; }
+      });
+
+      document.getElementById('btn-act-reset').addEventListener('click', function () {
+        if (actInterval) { clearInterval(actInterval); actInterval = null; }
+        remainingSeconds = api.ACT_PHASES[currentActIdx].seconds;
+        renderActTimer();
+      });
+
+      // Soundboard handlers
+      var statusBadge = document.getElementById('audio-status-badge');
+      function flashCuePad(btn, durationMs) {
+        btn.setAttribute('data-playing', 'true');
+        setTimeout(function () { btn.setAttribute('data-playing', 'false'); }, durationMs);
+      }
+
+      document.getElementById('mystery-volume').addEventListener('input', function (ev) {
+        var val = Number(ev.target.value);
+        document.getElementById('mystery-volume-val').textContent = val + '%';
+        audioEngine.setVolume(val / 100);
+      });
+
+      document.getElementById('btn-cue-storm').addEventListener('click', function (ev) {
+        var r = audioEngine.playCue('storm');
+        ev.currentTarget.setAttribute('data-playing', r.active ? 'true' : 'false');
+        statusBadge.textContent = r.active
+          ? (currentLang === 'en' ? 'Playing: Alpine Blizzard & Hearth' : 'En cours : Tempête Alpine & Cheminée')
+          : (currentLang === 'en' ? 'Ambience paused' : 'Ambiance en pause');
+      });
+
+      document.getElementById('btn-cue-blackout').addEventListener('click', function (ev) {
+        var r = audioEngine.playCue('blackout');
+        flashCuePad(ev.currentTarget, r.durationMs || 3000);
+        statusBadge.textContent = currentLang === 'en'
+          ? '23h40 Breaker Tripped — Pitch Darkness!'
+          : '23h40 Disjoncteur sauté — Obscurité totale !';
+      });
+
+      document.getElementById('btn-cue-ines-memo').addEventListener('click', function (ev) {
+        var stages = [1, 2, 3].map(function (n) { return document.getElementById('memo-stage-' + n); });
+        stages.forEach(function (el) { el.classList.remove('active'); });
+        var r = audioEngine.playCue('ines_memo', {
+          onStage: function (stageArg) {
+            var stageNum = (stageArg && typeof stageArg === 'object') ? stageArg.stage : stageArg;
+            stages.forEach(function (el, idx) {
+              el.classList.toggle('active', idx + 1 === stageNum);
+            });
+          }
+        });
+        flashCuePad(ev.currentTarget, r.durationMs || 5200);
+        stages[0].classList.add('active');
+        statusBadge.textContent = currentLang === 'en'
+          ? "Playing Ines's 23h42 Voice Memo (3 forensic stages)..."
+          : "Lecture du Mémo Vocal 23h42 d'Inès (3 indices sonores)...";
+      });
+
+      document.getElementById('btn-cue-gong').addEventListener('click', function (ev) {
+        var r = audioEngine.playCue('gong');
+        flashCuePad(ev.currentTarget, r.durationMs || 3900);
+        statusBadge.textContent = currentLang === 'en'
+          ? 'Manor Accusation Gong struck!'
+          : 'Gong d’Accusation du Manoir déclenché !';
+      });
+
+      document.getElementById('accusation-form').addEventListener('submit', function (ev) {
+        ev.preventDefault();
+        var voter = document.getElementById('ballot-voter').value.trim() || ('Guest #' + (ballots.length + 1));
+        var accused = document.getElementById('ballot-accused').value;
+        var bestActor = document.getElementById('ballot-best-actor').value;
+        var motive = document.getElementById('ballot-motive').value.trim();
+        ballots.push({ voter: voter, accused: accused, bestActor: bestActor, motive: motive });
+        storeSet('ygn_mystery_ballots', JSON.stringify(ballots));
+        document.getElementById('ballot-voter').value = '';
+        document.getElementById('ballot-motive').value = '';
+        renderTally();
+      });
+
+      document.getElementById('btn-clear-ballots').addEventListener('click', function () {
+        ballots = [];
+        storeSet('ygn_mystery_ballots', '[]');
+        renderTally();
+      });
+
+      document.getElementById('btn-unlock-solution').addEventListener('click', function (ev) {
+        if (vaultUnlocked) return;
+        var btn = ev.currentTarget;
+        if (btn.getAttribute('data-armed') !== 'true') {
+          btn.setAttribute('data-armed', 'true');
+          renderVault();
+        } else {
+          vaultUnlocked = true;
+          renderVault();
+        }
+      });
+
+      document.getElementById('btn-relock-solution').addEventListener('click', function () {
+        vaultUnlocked = false;
+        document.getElementById('btn-unlock-solution').setAttribute('data-armed', 'false');
+        renderVault();
+      });
+
+      setLanguage(currentLang);
+    })();
+  </script>
+</body>
+</html>

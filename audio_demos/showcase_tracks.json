@@ -1,0 +1,710 @@
+{
+  "schema_version": "1.0",
+  "generated_by": "products/04_custom_vip_engine/vip_audio_synth.py",
+  "audio_base_path": "./audio_demos/",
+  "disclosure_fr": "Aperçus instrumentaux polyphoniques synthétisés par notre moteur studio + karaoké souvenirs synchronisé (l'offre 34 € inclut le pack complet + paroles sur-mesure + Plaque QR 300 DPI).",
+  "disclosure_en": "Polyphonic studio instrumental arrangements synthesized by our engine + synced memory karaoke (the 34 € VIP edition includes full custom songwriting + master MP3 + 300 DPI QR Plaque).",
+  "tracks": [
+    {
+      "id": "noel_fr",
+      "occasion": "noel",
+      "lang": "FR",
+      "title": "Les Dimanches sous le Grand Sapin",
+      "recipient": "Papa (Marc) & Toute la Tribu",
+      "sender": "Léa, Hugo & Maman",
+      "relationship": "25 hivers de rires et de lumière en famille",
+      "style": "Acoustic Folk-Pop de Noël — Guitare bois, piano feutré & clochettes cristallines",
+      "subtitle_fr": "Noël en Famille • Guitare Bois Acoustique, Piano Feutré & Clochettes Cristallines",
+      "subtitle_en": "Family Christmas (FR) • Fingerpicked Wood Guitar, Felt Piano & Sleigh Shimmer",
+      "file": "demo_noel_fr.mp3",
+      "relative_url": "./audio_demos/demo_noel_fr.mp3",
+      "audio_src": "./audio_demos/demo_noel_fr.mp3",
+      "duration_seconds": 49.5,
+      "duration": "0:50",
+      "bpm": 84,
+      "key": "F Major",
+      "sample_rate_hz": 44100,
+      "channels": 2,
+      "bitrate_kbps": 192,
+      "bytes": 1189346,
+      "sha256": "ccaaef9bb01cea8359642e7052abfb7cdf84ee7a84e4123e7bfdd6e16854cc0b",
+      "rms": 0.1363,
+      "instruments": [
+        "Karplus-Strong Nylon Acoustic Guitar",
+        "Fireside Felt Piano",
+        "Crystal Sleigh-Bell Shimmer",
+        "Warm Acoustic Bass",
+        "Bowed String Ensemble",
+        "Expressive Folk Melodic Lead"
+      ],
+      "memories": [
+        "Les crêpes dorées du dimanche matin qui parfumaient toute la cuisine",
+        "Le vieux break bleu chargé de valises sous les flocons de décembre",
+        "Ton écharpe écossaise et ton rire rassurant près du feu de cheminée"
+      ],
+      "lyrics_sync": [
+        {
+          "t": 0.0,
+          "end_t": 2.86,
+          "section": "Intro",
+          "line": "♪ Les Dimanches sous le Grand Sapin — Pour Papa (Marc) & Toute la Tribu ♪"
+        },
+        {
+          "t": 2.86,
+          "end_t": 5.71,
+          "section": "Couplet 1",
+          "line": "Il y a des histoires qu'aucun livre ne raconte,"
+        },
+        {
+          "t": 5.71,
+          "end_t": 8.57,
+          "section": "Couplet 1",
+          "line": "Comme cet éclat précieux : Les crêpes dorées du dimanche matin qui parfumaient toute la cuisine"
+        },
+        {
+          "t": 8.57,
+          "end_t": 11.43,
+          "section": "Couplet 1",
+          "line": "On sourit encore en pensant à : Le vieux break bleu chargé de valises sous les flocons de décembre"
+        },
+        {
+          "t": 11.43,
+          "end_t": 14.29,
+          "section": "Couplet 1",
+          "line": "Chaque détail fidèle traverse les saisons."
+        },
+        {
+          "t": 14.29,
+          "end_t": 17.14,
+          "section": "Pré-Refrain",
+          "line": "Pour toi, Papa (Marc) & Toute la Tribu, chaque accord s'éclaire,"
+        },
+        {
+          "t": 17.14,
+          "end_t": 20.0,
+          "section": "Pré-Refrain",
+          "line": "25 hivers de rires et de lumière en famille — notre plus beau repère."
+        },
+        {
+          "t": 20.0,
+          "end_t": 22.86,
+          "section": "Refrain",
+          "line": "Voici « Les Dimanches sous le Grand Sapin », chantée rien que pour toi,"
+        },
+        {
+          "t": 22.86,
+          "end_t": 25.71,
+          "section": "Refrain",
+          "line": "Un fil d'or entre hier et nos sourires d'aujourd'hui,"
+        },
+        {
+          "t": 25.71,
+          "end_t": 28.57,
+          "section": "Refrain",
+          "line": "De la part de Léa, Hugo & Maman, écoute cette mélodie,"
+        },
+        {
+          "t": 28.57,
+          "end_t": 31.43,
+          "section": "Refrain",
+          "line": "Et ce trésor gravé au cœur : Ton écharpe écossaise et ton rire rassurant près du feu de cheminée"
+        },
+        {
+          "t": 31.43,
+          "end_t": 34.29,
+          "section": "Pont",
+          "line": "Les années défilent mais l'essentiel demeure,"
+        },
+        {
+          "t": 34.29,
+          "end_t": 37.14,
+          "section": "Pont",
+          "line": "Chaque souvenir partagé fait battre nos cœurs."
+        },
+        {
+          "t": 37.14,
+          "end_t": 40.0,
+          "section": "Refrain Final",
+          "line": "Voici « Les Dimanches sous le Grand Sapin », notre plus belle harmonie,"
+        },
+        {
+          "t": 40.0,
+          "end_t": 42.86,
+          "section": "Refrain Final",
+          "line": "Offerte par Léa, Hugo & Maman, gravée pour toute la vie."
+        },
+        {
+          "t": 42.86,
+          "end_t": 49.5,
+          "section": "Outro",
+          "line": "✦ Pour Papa (Marc) & Toute la Tribu • « Les Dimanches sous le Grand Sapin » ✦"
+        }
+      ],
+      "lyrics_timeline": [
+        {
+          "t": 0.0,
+          "end_t": 2.86,
+          "section": "Intro",
+          "line": "♪ Les Dimanches sous le Grand Sapin — Pour Papa (Marc) & Toute la Tribu ♪"
+        },
+        {
+          "t": 2.86,
+          "end_t": 5.71,
+          "section": "Couplet 1",
+          "line": "Il y a des histoires qu'aucun livre ne raconte,"
+        },
+        {
+          "t": 5.71,
+          "end_t": 8.57,
+          "section": "Couplet 1",
+          "line": "Comme cet éclat précieux : Les crêpes dorées du dimanche matin qui parfumaient toute la cuisine"
+        },
+        {
+          "t": 8.57,
+          "end_t": 11.43,
+          "section": "Couplet 1",
+          "line": "On sourit encore en pensant à : Le vieux break bleu chargé de valises sous les flocons de décembre"
+        },
+        {
+          "t": 11.43,
+          "end_t": 14.29,
+          "section": "Couplet 1",
+          "line": "Chaque détail fidèle traverse les saisons."
+        },
+        {
+          "t": 14.29,
+          "end_t": 17.14,
+          "section": "Pré-Refrain",
+          "line": "Pour toi, Papa (Marc) & Toute la Tribu, chaque accord s'éclaire,"
+        },
+        {
+          "t": 17.14,
+          "end_t": 20.0,
+          "section": "Pré-Refrain",
+          "line": "25 hivers de rires et de lumière en famille — notre plus beau repère."
+        },
+        {
+          "t": 20.0,
+          "end_t": 22.86,
+          "section": "Refrain",
+          "line": "Voici « Les Dimanches sous le Grand Sapin », chantée rien que pour toi,"
+        },
+        {
+          "t": 22.86,
+          "end_t": 25.71,
+          "section": "Refrain",
+          "line": "Un fil d'or entre hier et nos sourires d'aujourd'hui,"
+        },
+        {
+          "t": 25.71,
+          "end_t": 28.57,
+          "section": "Refrain",
+          "line": "De la part de Léa, Hugo & Maman, écoute cette mélodie,"
+        },
+        {
+          "t": 28.57,
+          "end_t": 31.43,
+          "section": "Refrain",
+          "line": "Et ce trésor gravé au cœur : Ton écharpe écossaise et ton rire rassurant près du feu de cheminée"
+        },
+        {
+          "t": 31.43,
+          "end_t": 34.29,
+          "section": "Pont",
+          "line": "Les années défilent mais l'essentiel demeure,"
+        },
+        {
+          "t": 34.29,
+          "end_t": 37.14,
+          "section": "Pont",
+          "line": "Chaque souvenir partagé fait battre nos cœurs."
+        },
+        {
+          "t": 37.14,
+          "end_t": 40.0,
+          "section": "Refrain Final",
+          "line": "Voici « Les Dimanches sous le Grand Sapin », notre plus belle harmonie,"
+        },
+        {
+          "t": 40.0,
+          "end_t": 42.86,
+          "section": "Refrain Final",
+          "line": "Offerte par Léa, Hugo & Maman, gravée pour toute la vie."
+        },
+        {
+          "t": 42.86,
+          "end_t": 49.5,
+          "section": "Outro",
+          "line": "✦ Pour Papa (Marc) & Toute la Tribu • « Les Dimanches sous le Grand Sapin » ✦"
+        }
+      ]
+    },
+    {
+      "id": "mariage_fr",
+      "occasion": "evjf_mariage",
+      "lang": "FR",
+      "title": "Promesse sous les Lanternes d'Or",
+      "recipient": "Claire & Thomas",
+      "sender": "Vos Témoins & Amis de Toujours",
+      "relationship": "Ouverture de bal & 10 ans de complicité",
+      "style": "Ballade Piano Cinématique & Quatuor à Cordes — Ouverture de bal romantique",
+      "subtitle_fr": "Mariage & EVJF • Ballade Piano Cinématique & Quatuor à Cordes Romantique",
+      "subtitle_en": "Wedding & First Dance (FR) • Cinematic Felt Piano & Warm String Quartet",
+      "file": "demo_mariage_fr.mp3",
+      "relative_url": "./audio_demos/demo_mariage_fr.mp3",
+      "audio_src": "./audio_demos/demo_mariage_fr.mp3",
+      "duration_seconds": 50.4,
+      "duration": "0:50",
+      "bpm": 78,
+      "key": "C Major",
+      "sample_rate_hz": 44100,
+      "channels": 2,
+      "bitrate_kbps": 192,
+      "bytes": 1211289,
+      "sha256": "137aaf28b10d860960690b629913db92d1cd60f42bbf7f115a2b8b3f4210c60e",
+      "rms": 0.1563,
+      "instruments": [
+        "Cascading Felt Piano Arpeggios",
+        "Vernier Bowed String Quartet (±4.5c Ensemble)",
+        "Delicate Nylon Acoustic Guitar",
+        "Warm Chamber Bass",
+        "Romantic Duet Lead & Cello Counter-Melody"
+      ],
+      "memories": [
+        "Votre premier café partagé sous l'averse place des Tilleuls un mardi d'avril",
+        "Le fou rire sous la tente face à l'orage d'été sur la côte bretonne",
+        "Ce oui murmuré ce soir entourés de tous ceux qui vous aiment"
+      ],
+      "lyrics_sync": [
+        {
+          "t": 0.0,
+          "end_t": 3.08,
+          "section": "Intro",
+          "line": "♪ Promesse sous les Lanternes d'Or — Pour Claire & Thomas ♪"
+        },
+        {
+          "t": 3.08,
+          "end_t": 6.15,
+          "section": "Couplet 1",
+          "line": "Il y a des histoires qu'aucun livre ne raconte,"
+        },
+        {
+          "t": 6.15,
+          "end_t": 9.23,
+          "section": "Couplet 1",
+          "line": "Comme cet éclat précieux : Votre premier café partagé sous l'averse place des Tilleuls un mardi d'avril"
+        },
+        {
+          "t": 9.23,
+          "end_t": 12.31,
+          "section": "Couplet 1",
+          "line": "On sourit encore en pensant à : Le fou rire sous la tente face à l'orage d'été sur la côte bretonne"
+        },
+        {
+          "t": 12.31,
+          "end_t": 15.38,
+          "section": "Couplet 1",
+          "line": "Chaque détail fidèle traverse les saisons."
+        },
+        {
+          "t": 15.38,
+          "end_t": 18.46,
+          "section": "Pré-Refrain",
+          "line": "Pour toi, Claire & Thomas, chaque accord s'éclaire,"
+        },
+        {
+          "t": 18.46,
+          "end_t": 21.54,
+          "section": "Pré-Refrain",
+          "line": "Ouverture de bal & 10 ans de complicité — notre plus beau repère."
+        },
+        {
+          "t": 21.54,
+          "end_t": 24.62,
+          "section": "Refrain",
+          "line": "Voici « Promesse sous les Lanternes d'Or », chantée rien que pour toi,"
+        },
+        {
+          "t": 24.62,
+          "end_t": 27.69,
+          "section": "Refrain",
+          "line": "Un fil d'or entre hier et nos sourires d'aujourd'hui,"
+        },
+        {
+          "t": 27.69,
+          "end_t": 30.77,
+          "section": "Refrain",
+          "line": "De la part de Vos Témoins & Amis de Toujours, écoute cette mélodie,"
+        },
+        {
+          "t": 30.77,
+          "end_t": 33.85,
+          "section": "Refrain",
+          "line": "Et ce trésor gravé au cœur : Ce oui murmuré ce soir entourés de tous ceux qui vous aiment"
+        },
+        {
+          "t": 33.85,
+          "end_t": 36.92,
+          "section": "Pont",
+          "line": "Les années défilent mais l'essentiel demeure,"
+        },
+        {
+          "t": 36.92,
+          "end_t": 40.0,
+          "section": "Pont",
+          "line": "Chaque souvenir partagé fait battre nos cœurs."
+        },
+        {
+          "t": 40.0,
+          "end_t": 43.08,
+          "section": "Refrain Final",
+          "line": "Voici « Promesse sous les Lanternes d'Or », notre plus belle harmonie,"
+        },
+        {
+          "t": 43.08,
+          "end_t": 46.15,
+          "section": "Refrain Final",
+          "line": "Offerte par Vos Témoins & Amis de Toujours, gravée pour toute la vie."
+        },
+        {
+          "t": 46.15,
+          "end_t": 50.4,
+          "section": "Outro",
+          "line": "✦ Pour Claire & Thomas • « Promesse sous les Lanternes d'Or » ✦"
+        }
+      ],
+      "lyrics_timeline": [
+        {
+          "t": 0.0,
+          "end_t": 3.08,
+          "section": "Intro",
+          "line": "♪ Promesse sous les Lanternes d'Or — Pour Claire & Thomas ♪"
+        },
+        {
+          "t": 3.08,
+          "end_t": 6.15,
+          "section": "Couplet 1",
+          "line": "Il y a des histoires qu'aucun livre ne raconte,"
+        },
+        {
+          "t": 6.15,
+          "end_t": 9.23,
+          "section": "Couplet 1",
+          "line": "Comme cet éclat précieux : Votre premier café partagé sous l'averse place des Tilleuls un mardi d'avril"
+        },
+        {
+          "t": 9.23,
+          "end_t": 12.31,
+          "section": "Couplet 1",
+          "line": "On sourit encore en pensant à : Le fou rire sous la tente face à l'orage d'été sur la côte bretonne"
+        },
+        {
+          "t": 12.31,
+          "end_t": 15.38,
+          "section": "Couplet 1",
+          "line": "Chaque détail fidèle traverse les saisons."
+        },
+        {
+          "t": 15.38,
+          "end_t": 18.46,
+          "section": "Pré-Refrain",
+          "line": "Pour toi, Claire & Thomas, chaque accord s'éclaire,"
+        },
+        {
+          "t": 18.46,
+          "end_t": 21.54,
+          "section": "Pré-Refrain",
+          "line": "Ouverture de bal & 10 ans de complicité — notre plus beau repère."
+        },
+        {
+          "t": 21.54,
+          "end_t": 24.62,
+          "section": "Refrain",
+          "line": "Voici « Promesse sous les Lanternes d'Or », chantée rien que pour toi,"
+        },
+        {
+          "t": 24.62,
+          "end_t": 27.69,
+          "section": "Refrain",
+          "line": "Un fil d'or entre hier et nos sourires d'aujourd'hui,"
+        },
+        {
+          "t": 27.69,
+          "end_t": 30.77,
+          "section": "Refrain",
+          "line": "De la part de Vos Témoins & Amis de Toujours, écoute cette mélodie,"
+        },
+        {
+          "t": 30.77,
+          "end_t": 33.85,
+          "section": "Refrain",
+          "line": "Et ce trésor gravé au cœur : Ce oui murmuré ce soir entourés de tous ceux qui vous aiment"
+        },
+        {
+          "t": 33.85,
+          "end_t": 36.92,
+          "section": "Pont",
+          "line": "Les années défilent mais l'essentiel demeure,"
+        },
+        {
+          "t": 36.92,
+          "end_t": 40.0,
+          "section": "Pont",
+          "line": "Chaque souvenir partagé fait battre nos cœurs."
+        },
+        {
+          "t": 40.0,
+          "end_t": 43.08,
+          "section": "Refrain Final",
+          "line": "Voici « Promesse sous les Lanternes d'Or », notre plus belle harmonie,"
+        },
+        {
+          "t": 43.08,
+          "end_t": 46.15,
+          "section": "Refrain Final",
+          "line": "Offerte par Vos Témoins & Amis de Toujours, gravée pour toute la vie."
+        },
+        {
+          "t": 46.15,
+          "end_t": 50.4,
+          "section": "Outro",
+          "line": "✦ Pour Claire & Thomas • « Promesse sous les Lanternes d'Or » ✦"
+        }
+      ]
+    },
+    {
+      "id": "birthday_en",
+      "occasion": "anniversaire",
+      "lang": "EN",
+      "title": "Forty Golden Summers With You",
+      "recipient": "Sarah",
+      "sender": "Emma, Daniel & The Whole Crew",
+      "relationship": "40th Milestone Birthday Celebration",
+      "style": "Uplifting Acoustic Pop — Strummed folk guitar, bright piano & warm celebratory groove",
+      "subtitle_fr": "Anniversaire 40 Ans (EN) • Indie-Pop Acoustique Lumineuse & Groove Chaleureux",
+      "subtitle_en": "40th Milestone Birthday (EN) • Uplifting Indie Acoustic Pop, Bright Piano & Groove",
+      "file": "demo_birthday_en.mp3",
+      "relative_url": "./audio_demos/demo_birthday_en.mp3",
+      "audio_src": "./audio_demos/demo_birthday_en.mp3",
+      "duration_seconds": 51.0,
+      "duration": "0:51",
+      "bpm": 96,
+      "key": "G Major",
+      "sample_rate_hz": 44100,
+      "channels": 2,
+      "bitrate_kbps": 192,
+      "bytes": 1225709,
+      "sha256": "ba83d23746318659bf51fef1cd9b86da725e472995b1707fce2d963b171de6fc",
+      "rms": 0.1481,
+      "instruments": [
+        "Strummed Karplus-Strong Acoustic Guitar",
+        "Bright Studio Piano",
+        "Warm Pitch-Swept Kick & Brushed Shaker",
+        "Warm Acoustic Bass",
+        "Celebratory Harmonic Pad",
+        "Uplifting Pop Melodic Lead"
+      ],
+      "memories": [
+        "Midnight kitchen concerts singing off-key with wooden spoons at twenty-two",
+        "Driving the coastal highway at sunrise with the windows rolled all the way down",
+        "Turning forty surrounded by every friend whose life you made brighter"
+      ],
+      "lyrics_sync": [
+        {
+          "t": 0.0,
+          "end_t": 5.0,
+          "section": "Intro",
+          "line": "♪ Forty Golden Summers With You — For Sarah ♪"
+        },
+        {
+          "t": 5.0,
+          "end_t": 7.5,
+          "section": "Verse 1",
+          "line": "Some favorite stories never fade with the years,"
+        },
+        {
+          "t": 7.5,
+          "end_t": 10.0,
+          "section": "Verse 1",
+          "line": "Shining right inside the memory of: Midnight kitchen concerts singing off-key with wooden spoons at twenty-two"
+        },
+        {
+          "t": 10.0,
+          "end_t": 12.5,
+          "section": "Verse 1",
+          "line": "And the laughter we still share thinking of: Driving the coastal highway at sunrise with the windows rolled all the way down"
+        },
+        {
+          "t": 12.5,
+          "end_t": 15.0,
+          "section": "Verse 1",
+          "line": "Every little detail still warm and alive today."
+        },
+        {
+          "t": 15.0,
+          "end_t": 17.5,
+          "section": "Pre-Chorus",
+          "line": "For you, Sarah, every chord rings true,"
+        },
+        {
+          "t": 17.5,
+          "end_t": 20.0,
+          "section": "Pre-Chorus",
+          "line": "40th Milestone Birthday Celebration — this melody belongs to you."
+        },
+        {
+          "t": 20.0,
+          "end_t": 22.5,
+          "section": "Chorus",
+          "line": "This is \"Forty Golden Summers With You\", written just for your heart,"
+        },
+        {
+          "t": 22.5,
+          "end_t": 25.0,
+          "section": "Chorus",
+          "line": "A golden thread tying every yesterday to now,"
+        },
+        {
+          "t": 25.0,
+          "end_t": 27.5,
+          "section": "Chorus",
+          "line": "With love from Emma, Daniel & The Whole Crew, right back to the start,"
+        },
+        {
+          "t": 27.5,
+          "end_t": 30.0,
+          "section": "Chorus",
+          "line": "Holding close forever: Turning forty surrounded by every friend whose life you made brighter"
+        },
+        {
+          "t": 30.0,
+          "end_t": 32.5,
+          "section": "Bridge",
+          "line": "Seasons keep turning, yet the best parts remain,"
+        },
+        {
+          "t": 32.5,
+          "end_t": 35.0,
+          "section": "Bridge",
+          "line": "Every shared memory singing your name."
+        },
+        {
+          "t": 35.0,
+          "end_t": 40.0,
+          "section": "Final Chorus",
+          "line": "This is \"Forty Golden Summers With You\", our favorite melody,"
+        },
+        {
+          "t": 40.0,
+          "end_t": 45.0,
+          "section": "Final Chorus",
+          "line": "Gifted by Emma, Daniel & The Whole Crew, yours for all time."
+        },
+        {
+          "t": 45.0,
+          "end_t": 51.0,
+          "section": "Outro",
+          "line": "✦ For Sarah • \"Forty Golden Summers With You\" ✦"
+        }
+      ],
+      "lyrics_timeline": [
+        {
+          "t": 0.0,
+          "end_t": 5.0,
+          "section": "Intro",
+          "line": "♪ Forty Golden Summers With You — For Sarah ♪"
+        },
+        {
+          "t": 5.0,
+          "end_t": 7.5,
+          "section": "Verse 1",
+          "line": "Some favorite stories never fade with the years,"
+        },
+        {
+          "t": 7.5,
+          "end_t": 10.0,
+          "section": "Verse 1",
+          "line": "Shining right inside the memory of: Midnight kitchen concerts singing off-key with wooden spoons at twenty-two"
+        },
+        {
+          "t": 10.0,
+          "end_t": 12.5,
+          "section": "Verse 1",
+          "line": "And the laughter we still share thinking of: Driving the coastal highway at sunrise with the windows rolled all the way down"
+        },
+        {
+          "t": 12.5,
+          "end_t": 15.0,
+          "section": "Verse 1",
+          "line": "Every little detail still warm and alive today."
+        },
+        {
+          "t": 15.0,
+          "end_t": 17.5,
+          "section": "Pre-Chorus",
+          "line": "For you, Sarah, every chord rings true,"
+        },
+        {
+          "t": 17.5,
+          "end_t": 20.0,
+          "section": "Pre-Chorus",
+          "line": "40th Milestone Birthday Celebration — this melody belongs to you."
+        },
+        {
+          "t": 20.0,
+          "end_t": 22.5,
+          "section": "Chorus",
+          "line": "This is \"Forty Golden Summers With You\", written just for your heart,"
+        },
+        {
+          "t": 22.5,
+          "end_t": 25.0,
+          "section": "Chorus",
+          "line": "A golden thread tying every yesterday to now,"
+        },
+        {
+          "t": 25.0,
+          "end_t": 27.5,
+          "section": "Chorus",
+          "line": "With love from Emma, Daniel & The Whole Crew, right back to the start,"
+        },
+        {
+          "t": 27.5,
+          "end_t": 30.0,
+          "section": "Chorus",
+          "line": "Holding close forever: Turning forty surrounded by every friend whose life you made brighter"
+        },
+        {
+          "t": 30.0,
+          "end_t": 32.5,
+          "section": "Bridge",
+          "line": "Seasons keep turning, yet the best parts remain,"
+        },
+        {
+          "t": 32.5,
+          "end_t": 35.0,
+          "section": "Bridge",
+          "line": "Every shared memory singing your name."
+        },
+        {
+          "t": 35.0,
+          "end_t": 40.0,
+          "section": "Final Chorus",
+          "line": "This is \"Forty Golden Summers With You\", our favorite melody,"
+        },
+        {
+          "t": 40.0,
+          "end_t": 45.0,
+          "section": "Final Chorus",
+          "line": "Gifted by Emma, Daniel & The Whole Crew, yours for all time."
+        },
+        {
+          "t": 45.0,
+          "end_t": 51.0,
+          "section": "Outro",
+          "line": "✦ For Sarah • \"Forty Golden Summers With You\" ✦"
+        }
+      ]
+    }
+  ]
+}
